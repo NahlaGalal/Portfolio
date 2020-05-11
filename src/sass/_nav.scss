@@ -1,0 +1,96 @@
+.Navbar {
+  @include small-container-padding;
+  height: 120px;
+  background-color: var(--back-color);
+  box-shadow: $box-shadow;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__logo {
+    font-size: 40px;
+    color: var(--main-color);
+    font-weight: $black-font;
+  }
+
+  &__hamburger {
+    width: 56px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    span {
+      width: 32px;
+      height: 4px;
+      background-color: var(--back-color);
+      margin: 4px 0;
+      transition: $transition;
+    }
+    &.active {
+      span {
+        &:not(:nth-of-type(2)) {
+          position: absolute;
+          margin: 0;
+          transform: rotate(45deg);
+        }
+        &:last-of-type {
+          transform: rotate(-45deg);
+        }
+        &:nth-of-type(2) {
+          visibility: hidden;
+        }
+      }
+    }
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+  }
+
+  &__links {
+    @media screen and (max-width: 600px) {
+      position: absolute;
+      box-shadow: $box-shadow;
+      width: 100%;
+      left: 0;
+      background-color: #fff;
+      top: 90px;
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @media screen and (min-width: 600px) {
+      display: flex;
+      justify-content: center;
+      li:not(:last-of-type) {
+        margin-right: 16px;
+      }
+    }
+
+    li {
+      background-color: transparent;
+      transition: $transition;
+      padding: 8px 16px;
+      border-radius: 10px;
+      &:hover {
+        background-color: var(--text-color);
+        a {
+          color: var(--back-color);
+        }
+      }
+      a {
+        color: var(--text-color);
+      }
+    }
+  }
+}

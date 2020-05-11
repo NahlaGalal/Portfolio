@@ -1,11 +1,16 @@
 // We use css variables to toggle dark theme easily
 :root {
-  --main-color: #4E3C51;
+  --main-color: #4e3c51;
   --secondary-color: #8D818F;
   --text-color: #292B2C;
   --back-color: #E3E3E3;
 }
 
+// Font weights
 $regular-font: 400;
 $bold-font: 700;
 $black-font: 900;
+
+$box-shadow: 0 4px 6px rgba(78, 60, 81, 0.25);
+
+$transition: all 0.4s ease-in-out;
