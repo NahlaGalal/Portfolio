@@ -1,14 +1,12 @@
-import React from 'react'
-import Navbar from './Navbar'
-import SwitchTheme from './SwitchTheme'
+import React from "react";
+import Navbar from "./Navbar";
 
 const Projects = () => {
   return (
     <div className="Projects">
-      <SwitchTheme />
       <Navbar />
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

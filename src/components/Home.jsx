@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import SwitchTheme from "./SwitchTheme";
 import profile from "../images/profile.jpg";
 import phoneIcon from "../images/phone.svg";
 import mailIcon from "../images/mail.svg";
@@ -11,6 +10,8 @@ import Twitter from "../images/twitter.svg";
 import Linkedin from "../images/linkedin.svg";
 
 const Home = (props) => {
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     const element = document.getElementById(
       props.location.hash.replace("#", "")
@@ -23,10 +24,20 @@ const Home = (props) => {
     }, 100);
   }, [props.location]);
 
+  const generatePages = () => {
+    let pagesListItems = [];
+    for (let i = 1; i <= Math.ceil(data.length / 3); i++) {
+      pagesListItems.push(
+        <li key={i} className={`${i === page ? "active" : ""}`}>
+          <button onClick={() => setPage(i)}>{i}</button>
+        </li>
+      );
+    }
+    return pagesListItems;
+  };
+
   return (
     <div className="Home">
-      {/** Switch language */}
-      <SwitchTheme />
       {/** About header */}
       <header className="Home__header">
         <div className="Home__header__image">
@@ -60,7 +71,7 @@ const Home = (props) => {
         <section className="Home__projects" id="projects">
           <h2 className="Home__heading">My Projects</h2>
           <span className="Home__heading-border"></span>
-          {data.slice(0, 3).map((project) => (
+          {data.slice((page - 1) * 3, page * 3).map((project) => (
             <figure className="Home__projects__project" key={project.id}>
               <div className="Home__projects__project__image">
                 <img
@@ -73,6 +84,7 @@ const Home = (props) => {
               </figcaption>
             </figure>
           ))}
+          <ul className="Home__projects__paging">{generatePages()}</ul>
         </section>
         {/** Contacts section */}
         <section className="Home__contact" id="contact">
@@ -91,7 +103,9 @@ const Home = (props) => {
               <textarea name="message" id="message"></textarea>
               <label htmlFor="message">Your message</label>
             </div>
-            <button type="submit">Send</button>
+            <button type="submit">
+              Send<span>GO!</span>
+            </button>
           </form>
           <div className="Home__contact__social">
             <h3>OR you can follow me on social media accounts</h3>
@@ -125,3 +139,9 @@ const Home = (props) => {
 };
 
 export default Home;
+
+/**
+ * page 1 ==> 0 => 2
+ * page 2 ==> 3 => 5
+ * page 3 ==> 6 => 8
+ */

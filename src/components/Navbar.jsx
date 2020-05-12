@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {NavLink} from "react-router-dom"
+import {NavLink, Link} from "react-router-dom"
 
 const Navbar = () => {
   const [navigationMenu, setNavigationMenu] = useState(false);
@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <nav className="Navbar">
-      <a href="/" className="Navbar__logo">
+      <Link to="/" className="Navbar__logo">
         Nahla Galal
-      </a>
+      </Link>
       <button
         className={`Navbar__hamburger${navigationMenu ? " active" : ""}`}
         onClick={toggleNavigationMenu}
