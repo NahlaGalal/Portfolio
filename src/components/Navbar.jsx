@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {NavLink} from "react-router-dom"
 
 const Navbar = () => {
   const [navigationMenu, setNavigationMenu] = useState(false);
@@ -20,13 +21,13 @@ const Navbar = () => {
       </button>
       <ul className={`Navbar__links${navigationMenu ? " active" : ""}`}>
         <li>
-          <a href="/">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="/#projects">Projects</a>
+          <NavLink to="/#projects">Projects</NavLink>
         </li>
         <li>
-          <a href="/#contact">Contact</a>
+          <NavLink to="/#contact">Contact</NavLink>
         </li>
       </ul>
     </nav>

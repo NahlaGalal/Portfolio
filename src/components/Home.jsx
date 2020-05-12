@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import SwitchTheme from "./SwitchTheme";
 import profile from "../images/profile.jpg";
 import phoneIcon from "../images/phone.svg";
 import mailIcon from "../images/mail.svg";
-import data from '../util/data.js';
+import data from "../util/data.js";
 
-const Home = () => {
+const Home = (props) => {
+  useEffect(() => {
+    const element = document.getElementById(props.location.hash.replace("#", ""));
+    setTimeout(() => {
+      window.scrollTo({
+        behavior: element ? "smooth" : "auto",
+        top: element ? element.offsetTop : 0,
+      });
+    }, 100);
+  }, [props.location]);
+
   return (
     <div className="Home">
       {/** Switch language */}
@@ -41,13 +51,16 @@ const Home = () => {
       </header>
       <main>
         {/** Projects section */}
-        <section className="Home__projects">
+        <section className="Home__projects" id="projects">
           <h2 className="Home__heading">My Projects</h2>
           <span className="Home__heading-border"></span>
-          {data.slice(0, 3).map(project => (
+          {data.slice(0, 3).map((project) => (
             <figure className="Home__projects__project" key={project.id}>
               <div className="Home__projects__project__image">
-                <img src={project["main-image"]} alt={`${project.name} page screenshot`} />
+                <img
+                  src={project["main-image"]}
+                  alt={`${project.name} page screenshot`}
+                />
               </div>
               <figcaption>
                 <Link to={`/project/${project.id}`}>{project.name}</Link>
@@ -56,7 +69,7 @@ const Home = () => {
           ))}
         </section>
         {/** Contacts section */}
-        <section className="Home__contact">
+        <section className="Home__contact" id="contact">
           <h2 className="Home__heading">Contact us</h2>
           <span className="Home__heading-border"></span>
           <form className="Home__contact__form">
