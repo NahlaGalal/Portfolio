@@ -9,6 +9,7 @@
   flex-direction: column;
   width: 32px;
   height: 136px;
+  z-index: 3;
 
   &__current {
     position: absolute;
@@ -26,7 +27,7 @@
     transition: $transition;
     text-transform: capitalize;
     &.dark {
-      top: 68px
+      top: 68px;
     }
   }
 
@@ -39,9 +40,11 @@
     color: var(--text-color);
     z-index: 3;
     font-size: 16px;
+    border: 1px solid var(--text-color);
     &:first-of-type {
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
+      border-bottom: 0;
       &.Theme__light {
         z-index: -1;
       }
@@ -49,6 +52,7 @@
     &:last-of-type {
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+      border-top: 0;
       &.Theme__dark {
         z-index: -1;
       }
