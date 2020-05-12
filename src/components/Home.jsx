@@ -5,10 +5,16 @@ import profile from "../images/profile.jpg";
 import phoneIcon from "../images/phone.svg";
 import mailIcon from "../images/mail.svg";
 import data from "../util/data.js";
+import Github from "../images/github.svg";
+import Facebook from "../images/facebook.svg";
+import Twitter from "../images/twitter.svg";
+import Linkedin from "../images/linkedin.svg";
 
 const Home = (props) => {
   useEffect(() => {
-    const element = document.getElementById(props.location.hash.replace("#", ""));
+    const element = document.getElementById(
+      props.location.hash.replace("#", "")
+    );
     setTimeout(() => {
       window.scrollTo({
         behavior: element ? "smooth" : "auto",
@@ -87,6 +93,31 @@ const Home = (props) => {
             </div>
             <button type="submit">Send</button>
           </form>
+          <div className="Home__contact__social">
+            <h3>OR you can follow me on social media accounts</h3>
+            <ul>
+              <li>
+                <Link to="https://www.facebook.com/NhlaaGalal/">
+                  <img src={Facebook} alt="Facebbok link icon" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/">
+                  <img src={Twitter} alt="Twitter link icon" />
+                </Link>
+              </li>
+              <li>
+                <Link to="https://www.linkedin.com/in/nahla-galal-80347b141/">
+                  <img src={Linkedin} alt="Linkedin link icon" />
+                </Link>
+              </li>
+              <li>
+                <Link to="https://github.com/NahlaGalal">
+                  <img src={Github} alt="Github link icon" />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </section>
       </main>
     </div>
