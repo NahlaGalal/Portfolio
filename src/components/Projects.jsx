@@ -5,11 +5,12 @@ import nextArrow from "../images/icons/right-arrow.svg";
 import prevArrow from "../images/icons/left-arrow.svg";
 
 const Projects = (props) => {
-  const [imageIndex, setImageIndex] = useState(0);
-
   const project = data.find(
     (project) => project.id === parseInt(props.match.params.id)
   );
+
+  const [imageIndex, setImageIndex] = useState(0);
+  const [image, setImage] = useState(project["main-image"]);
 
   const generateNextImage = () => {
     if (imageIndex + 2 >= project.images.length) return;
@@ -28,18 +29,20 @@ const Projects = (props) => {
         <h1>{project.name}</h1>
         <section className="Project__carousel">
           <div className="Project__carousel__image">
-            <img src={project.images[0]} alt="Project screenshot" />
+            <img src={image} alt="Project screenshot" />
           </div>
           <div className="Project__carousel__gallery">
             <button onClick={generatePrevImage}>
               <img src={prevArrow} alt="Previous icon" />
             </button>
             <img
+              onClick={() => setImage(project.images[imageIndex])}
               src={project.images[imageIndex]}
               alt="Other screenshots of the project"
             />
             {project.images[imageIndex + 1] && (
               <img
+                onClick={() => setImage(project.images[imageIndex + 1])}
                 src={project.images[imageIndex + 1]}
                 alt="Other screenshots of the project"
               />
@@ -79,9 +82,17 @@ const Projects = (props) => {
               </li>
             ))}
           </ul>
-          <a href={project.link} className="btn">
-            Visit website<span>GO!</span>
-          </a>
+          <div className="links">
+            {project.link && (
+              <a href={project.link} className="btn">
+                {project.text}
+                <span>GO!</span>
+              </a>
+            )}
+            <a href={project.code} className="btn">
+              View code<span>GO!</span>
+            </a>
+          </div>
         </section>
       </main>
     </div>

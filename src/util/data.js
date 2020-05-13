@@ -16,6 +16,8 @@ export default [
     details:
       "Using Curey, you can instantly request a doctor to your home or reserve your turn at a clinic without leaving your doorsteps, Curey also provides access to hundreds of pharmacies, where you can order almost any drug",
     link: "https://curey-front-end.herokuapp.com/",
+    code: "https://github.com/NahlaGalal/Curey-front-end",
+    text: "Visit website",
     languages: [
       {
         language: "HTML",
@@ -54,16 +56,18 @@ export default [
     name: "Git clone OLX",
     "main-image": require("../images/jpgImages/git-clone-olx5.jpg"),
     images: [
-      require("../images/jpgImages/git-clone-olx1.jpg"),
+      require("../images/jpgImages/git-clone-olx5.jpg"),
       require("../images/jpgImages/git-clone-olx2.jpg"),
       require("../images/jpgImages/git-clone-olx3.jpg"),
       require("../images/jpgImages/git-clone-olx4.jpg"),
-      require("../images/jpgImages/git-clone-olx5.jpg"),
+      require("../images/jpgImages/git-clone-olx1.jpg"),
       require("../images/jpgImages/git-clone-olx6.jpg"),
     ],
     details:
       "it's a website to sell used items to other people, similar to eBay or OLX - if you're arab -",
-    link: "https://git-clone-olx.netlify.app",
+    link: "https://git-clone-olx.herokuapp.com/",
+    text: "Visit website",
+    code: "https://github.com/NahlaGalal/git-clone-olx",
     backcolor: "#79afeb",
     languages: [
       {
@@ -110,6 +114,8 @@ export default [
     details:
       "It’s a page for Scope event which held for CAT Reloaded team in Faculty of Engineering Mansoura University",
     link: "https://bit.ly/2Kn4gr8",
+    text: "View full screenshot",
+    code: "https://github.com/NahlaGalal/git-clone-olx",
     languages: [
       {
         language: "HTML",
@@ -139,6 +145,8 @@ export default [
     details:
       "It’s a page for Scope event which held for CAT Reloaded team in Faculty of Engineering Mansoura University",
     link: "https://bit.ly/2zhrywc",
+    text: "View full screenshot",
+    code: "https://github.com/NahlaGalal/Cat-Scope-16",
     languages: [
       {
         language: "HTML",
@@ -175,8 +183,10 @@ export default [
     images: [require("../images/jpgImages/Sudoku.jpg")],
     details:
       "It’s a simulation for sudoku game by pure js except game generator which I used a library to generate",
-    link: "sudoku-sim.netlify.app",
+    link: "http://sudoku-sim.netlify.app",
     backcolor: "#6fa1f8",
+    text: "Visit website",
+    code: "https://github.com/NahlaGalal/Sudoku-app",
     languages: [
       {
         language: "HTML",
@@ -222,6 +232,7 @@ export default [
     details:
       "It's a magazine for CAT Reloaded team in Faculty of Engineering Mansoura University where student can read technical articles from CAT members and comment on this articles",
     link: "",
+    code: "https://github.com/NahlaGalal/Catazine",
     languages: [
       {
         language: "HTML",
@@ -246,11 +257,16 @@ export default [
   {
     id: 8,
     name: "Datetime picker",
-    "main-image": "",
-    images: [],
+    "main-image": require("../images/jpgImages/DatePicker1.jpg"),
+    images: [
+      require("../images/jpgImages/DatePicker1.jpg"),
+      require("../images/jpgImages/DatePicker2.jpg"),
+      require("../images/jpgImages/DatePicker3.jpg"),
+    ],
     details:
       "It's a simple date time picker which allows user to select future date and type its time from 0 to 12 AM or PM",
     link: "",
+    code: "https://github.com/NahlaGalal/Date-time-picker",
     languages: [
       {
         language: "HTML",
@@ -288,7 +304,9 @@ export default [
     details:
       "It’s a simple simulation for calculator which can do simple operations like add, multiply, sin, cos, etc...",
     link: "https://bit.ly/2KmpmG0",
+    text: "View vedio",
     backcolor: "#dddddd",
+    code: "https://github.com/NahlaGalal/Simple-calculator",
     languages: [
       {
         language: "HTML",

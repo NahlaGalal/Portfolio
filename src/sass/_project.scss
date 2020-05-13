@@ -141,12 +141,16 @@
       }
     }
 
-    .btn {
-      margin: 24px auto;
-      width: 176px;
+    .links {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-wrap: wrap;
+      .btn {
+        margin: 24px auto;
+        width: 176px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 }
