@@ -73,7 +73,7 @@ const Home = (props) => {
           <span className="Home__heading-border"></span>
           {data.slice((page - 1) * 3, page * 3).map((project) => (
             <figure className="Home__projects__project" key={project.id}>
-              <div className="Home__projects__project__image">
+              <div className="Home__projects__project__image" style={{backgroundColor: project.backcolor}}>
                 <img
                   src={project["main-image"]}
                   alt={`${project.name} page screenshot`}

@@ -155,16 +155,24 @@
           width: 100%;
           object-fit: cover;
           transition: all 1.5s ease-in-out;
-          &:hover {
-            transform: translateY(calc(-100% + 389px));
-          }
+        }
+        &:hover img {
+          transform: translateY(calc(-100% + 389px));
         }
       }
       figcaption {
         font-size: 24px;
         font-weight: $bold-font;
         text-align: center;
-        margin-top: 16px;
+        margin: -36px 10% 0;
+        height: 80px;
+        background: var(--back-color);
+        border-radius: 20px;
+        box-shadow: $box-shadow;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         a {
           color: var(--main-color);
         }
