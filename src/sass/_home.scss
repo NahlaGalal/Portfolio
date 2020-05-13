@@ -203,6 +203,17 @@
           transition: $transition;
           &:focus {
             border-color: var(--main-color);
+            outline: none;
+            & + label {
+              top: 0;
+              height: 25px;
+              background-color: var(--back-color);
+            }
+          }
+          &.label-top + label {
+            top: 0;
+            height: 25px;
+            background-color: var(--back-color);
           }
         }
         label {
@@ -211,10 +222,15 @@
           top: 50%;
           transform: translateY(-50%);
           left: 16px;
+          transition: $transition;
         }
         textarea {
           height: 160px;
           padding-top: 11px;
+          &:focus + label,
+          &.label-top + label {
+            top: -12px;
+          }
         }
         textarea + label {
           top: 11px;
