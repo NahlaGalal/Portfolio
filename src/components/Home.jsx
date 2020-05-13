@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import profile from "../images/icons/profile.jpg";
+import profile from "../images/jpgImages/profile.jpg";
 import phoneIcon from "../images/icons/phone.svg";
 import mailIcon from "../images/icons/mail.svg";
 import data from "../util/data.js";

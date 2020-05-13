@@ -1,0 +1,152 @@
+.Project {
+  @include small-container-padding;
+  @media screen and (min-width: 678px) {
+    @include large-container-padding;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+
+  h1 {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    text-align: center;
+    @media screen and (min-width: 678px) {
+      grid-column: 1/3;
+    }
+  }
+
+  &__carousel {
+    margin-bottom: 40px;
+    &__image {
+      height: 268px;
+      overflow: hidden;
+      @media screen and (min-width: 678px) {
+        height: 560px;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        transition: all 1.5s ease-in-out;
+      }
+      &:hover img {
+        transform: translateY(calc(-100% + 268px));
+        @media screen and (min-width: 678px) {
+          transform: translateY(calc(-100% + 560px));
+        }
+      }
+    }
+    &__gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      button {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 0;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      > img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-right: 8px;
+        cursor: pointer;
+        &:first-of-type {
+          margin-left: 8px;
+        }
+        @media screen and (min-width: 500px) {
+          margin-right: 24px;
+          &:first-of-type {
+            margin-left: 24px;
+          }
+        }
+        @media screen and (min-width: 1000px) {
+          margin-right: 40px;
+          &:first-of-type {
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .heading {
+    margin: 0;
+    margin-left: 46px;
+    &-border {
+      margin-left: 90px;
+      &:nth-of-type(2) {
+        margin-left: 79px;
+      }
+      &:nth-of-type(3) {
+        margin-left: 46px;
+      }
+    }
+  }
+
+  &__info {
+    p {
+      line-height: 25px;
+      margin: 16px 0 24px;
+    }
+
+    &__languages {
+      margin-bottom: 24px;
+      li {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px 0;
+        > span:last-of-type {
+          text-align: right;
+        }
+        .bar {
+          grid-column: 1/3;
+          height: 16px;
+          border-radius: 20px;
+          border: 1px solid var(--secondary-color);
+          &__percent {
+            display: block;
+            height: 16px;
+            span {
+              display: block;
+              background-color: var(--main-color);
+              border-radius: 20px;
+              height: 16px;
+              animation: bar-animation 2s;
+            }
+          }
+        }
+      }
+    }
+
+    &__skills {
+      display: flex;
+      margin: 16px 0 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      li:not(:last-of-type) {
+        margin-right: 24px;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .btn {
+      margin: 24px auto;
+      width: 176px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

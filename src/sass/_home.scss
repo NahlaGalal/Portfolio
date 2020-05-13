@@ -1,6 +1,5 @@
 .Home {
   @include small-container-padding;
-  background-color: var(--back-color);
   overflow: hidden;
   min-height: 100vh;
   @media screen and (min-width: 678px) {
@@ -55,12 +54,6 @@
         }
       }
     }
-    h1 {
-      margin-top: 56px;
-      font-size: 48px;
-      font-weight: $bold-font;
-      color: var(--main-color);
-    }
 
     h2 {
       margin: 16px 0;
@@ -100,39 +93,6 @@
     overflow: hidden;
   }
 
-  /** Heading section **/
-  &__heading {
-    position: relative;
-    font-size: 32px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    width: max-content;
-    margin: 0 auto;
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      border: 3px solid var(--main-color);
-      right: -40px;
-    }
-    &:before {
-      right: unset;
-      left: -40px;
-    }
-  }
-
-  &__heading-border {
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: var(--main-color);
-    margin: 8px auto 0;
-    border-radius: 20px;
-  }
-
   /* Projects section */
   &__projects {
     margin-top: 80px;
@@ -170,11 +130,13 @@
         border-radius: 20px;
         box-shadow: $box-shadow;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         a {
           color: var(--main-color);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -259,34 +221,10 @@
           transform: none;
         }
       }
-      button {
+      .btn {
         border: 0;
-        background-color: var(--text-color);
-        color: var(--back-color);
         width: 80px;
-        height: 40px;
-        border-radius: 10px;
         margin: 0 auto;
-        display: block;
-        font-size: 16px;
-        cursor: pointer;
-        position: relative;
-        span {
-          position: absolute;
-          right: -200px;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          transition: $transition;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        &:hover span {
-          background-color: var(--main-color);
-          right: 0;
-          border-radius: 10px;
-        }
       }
     }
 
@@ -296,7 +234,7 @@
       @media screen and (min-width: 678px) {
         grid-column: 1/2;
         grid-row: 3/4;
-        background-image: url("../images/contact.jpg");
+        background-image: url("../images/jpgImages/contact.jpg");
         background-size: cover;
         background-color: var(--back-color);
         background-blend-mode: overlay;

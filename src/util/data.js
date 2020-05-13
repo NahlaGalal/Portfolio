@@ -30,6 +30,24 @@ export default [
         percent: 78.3,
       },
     ],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "SASS",
+        image: require("../images/skillsIcons/SASS.svg"),
+      },
+      {
+        name: "React",
+        image: require("../images/skillsIcons/React.svg"),
+      },
+      {
+        name: "Redux",
+        image: require("../images/skillsIcons/Redux.svg"),
+      },
+    ],
   },
   {
     id: 2,
@@ -61,7 +79,28 @@ export default [
         percent: 74.9,
       },
     ],
-    skills: ["HTML", "SASS", "React", "Redux", "Axios"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+      {
+        name: "React",
+        image: require("../images/skillsIcons/React.svg"),
+      },
+      {
+        name: "Redux",
+        image: require("../images/skillsIcons/Redux.svg"),
+      },
+      {
+        name: "Firebase",
+        image: require("../images/skillsIcons/Firebase.svg"),
+      },
+    ],
   },
   {
     id: 4,
@@ -81,7 +120,16 @@ export default [
         percent: 46.8,
       },
     ],
-    skills: ["HTML", "CSS", "React", "Redux", "Axios", "Firebase"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+    ],
   },
   {
     id: 5,
@@ -105,7 +153,20 @@ export default [
         percent: 1.2,
       },
     ],
-    skills: ["HTML", "CSS", "JS"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+      {
+        name: "JS",
+        image: require("../images/skillsIcons/JS.svg"),
+      },
+    ],
   },
   {
     id: 6,
@@ -130,7 +191,20 @@ export default [
         percent: 92.2,
       },
     ],
-    skills: ["HTML", "CSS", "JS"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+      {
+        name: "JS",
+        image: require("../images/skillsIcons/JS.svg"),
+      },
+    ],
   },
   {
     id: 7,
@@ -158,7 +232,16 @@ export default [
         percent: 44.7,
       },
     ],
-    skills: ["HTML", "CSS"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+    ],
   },
   {
     id: 8,
@@ -182,7 +265,20 @@ export default [
         percent: 69.5,
       },
     ],
-    skills: ["HTML", "CSS", "React"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+      {
+        name: "React",
+        image: require("../images/skillsIcons/React.svg"),
+      },
+    ],
   },
   {
     id: 3,
@@ -207,6 +303,19 @@ export default [
         percent: 62.4,
       },
     ],
-    skills: ["HTML", "CSS", "JS"],
+    skills: [
+      {
+        name: "HTML",
+        image: require("../images/skillsIcons/HTML.svg"),
+      },
+      {
+        name: "CSS",
+        image: require("../images/skillsIcons/CSS.svg"),
+      },
+      {
+        name: "JS",
+        image: require("../images/skillsIcons/JS.svg"),
+      },
+    ],
   },
 ];

@@ -1,7 +1,7 @@
 .Navbar {
   @include small-container-padding;
   height: 120px;
-  background-color: var(--back-color);
+  background-color: var(--text-color);
   box-shadow: $box-shadow;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 
   &__logo {
     font-size: 40px;
-    color: var(--main-color);
+    color: var(--secondary-color);
     font-weight: $black-font;
   }
 
@@ -18,7 +18,7 @@
     width: 56px;
     height: 48px;
     border-radius: 10px;
-    background-color: var(--text-color);
+    background-color: var(--back-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
     span {
       width: 32px;
       height: 4px;
-      background-color: var(--back-color);
+      background-color: var(--text-color);
       margin: 4px 0;
       transition: $transition;
     }
@@ -58,7 +58,7 @@
       box-shadow: $box-shadow;
       width: 100%;
       left: 0;
-      background-color: #fff;
+      background-color: var(--main-color);
       top: 90px;
       opacity: 0;
       visibility: hidden;
@@ -82,13 +82,13 @@
       padding: 8px 16px;
       border-radius: 10px;
       &:hover {
-        background-color: var(--text-color);
+        background-color: var(--back-color);
         a {
-          color: var(--back-color);
+          color: var(--text-color);
         }
       }
       a {
-        color: var(--text-color);
+        color: var(--back-color);
       }
     }
   }
