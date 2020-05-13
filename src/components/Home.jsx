@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import profile from "../images/profile.jpg";
-import phoneIcon from "../images/phone.svg";
-import mailIcon from "../images/mail.svg";
+import profile from "../images/icons/profile.jpg";
+import phoneIcon from "../images/icons/phone.svg";
+import mailIcon from "../images/icons/mail.svg";
 import data from "../util/data.js";
-import Github from "../images/github.svg";
-import Facebook from "../images/facebook.svg";
-import Twitter from "../images/twitter.svg";
-import Linkedin from "../images/linkedin.svg";
+import Github from "../images/icons/github.svg";
+import Facebook from "../images/icons/facebook.svg";
+import Twitter from "../images/icons/twitter.svg";
+import Linkedin from "../images/icons/linkedin.svg";
 
 const Home = (props) => {
   const [page, setPage] = useState(1);
@@ -73,7 +73,10 @@ const Home = (props) => {
           <span className="Home__heading-border"></span>
           {data.slice((page - 1) * 3, page * 3).map((project) => (
             <figure className="Home__projects__project" key={project.id}>
-              <div className="Home__projects__project__image" style={{backgroundColor: project.backcolor}}>
+              <div
+                className="Home__projects__project__image"
+                style={{ backgroundColor: project.backcolor }}
+              >
                 <img
                   src={project["main-image"]}
                   alt={`${project.name} page screenshot`}
@@ -103,7 +106,7 @@ const Home = (props) => {
               <textarea name="message" id="message"></textarea>
               <label htmlFor="message">Your message</label>
             </div>
-            <button type="submit">
+            <button type="submit" className="btn">
               Send<span>GO!</span>
             </button>
           </form>
