@@ -54,10 +54,10 @@ const Home = (props) => {
         <h1>Hello,</h1>
         <h2>I'm Nahla Galal</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
-          inventore a libero ut ratione fugiat, nesciunt illum quo corporis,
-          nisi numquam quidem explicabo! Explicabo ipsa soluta est praesentium,
-          quam fugit!
+          I'm a front end developer , I have started
+          this career since April 2017 till now. I love learning new features
+          and working in teams to take advantages from each other. I can learn
+          and work under stress
         </p>
         <div className="Home__header__contacts">
           <div className="Home__header__contacts__icon">
