@@ -3,11 +3,14 @@ import cors from "cors";
 import mongoose from "mongoose";
 const http = require("http");
 
+import router from "./router"
+
 const MONGODB_URI = "mongodb://localhost/portfolio";
 
 const app = express();
 
 app.use(cors());
+app.use(router);
 
 mongoose
   .connect(MONGODB_URI, {
