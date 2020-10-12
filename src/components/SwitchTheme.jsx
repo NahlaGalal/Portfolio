@@ -4,16 +4,22 @@ const SwitchTheme = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    if(theme === "light") {
-      document.documentElement.style.setProperty("--main-color", "#4e3c51");
-      document.documentElement.style.setProperty("--secondary-color", "#8D818F");
-      document.documentElement.style.setProperty("--text-color", "#292B2C");
-      document.documentElement.style.setProperty("--back-color", "#E3E3E3");
+    if(theme === "dark") {
+      document.documentElement.style.setProperty("--main-color", "#9DBCBC");
+      document.documentElement.style.setProperty(
+        "--secondary-color",
+        "#006666"
+      );
+      document.documentElement.style.setProperty("--text-color", "#B7B7B7");
+      document.documentElement.style.setProperty("--back-color", "#6B6B6B");
     }else {
-      document.documentElement.style.setProperty("--main-color", "#8D818F");
-      document.documentElement.style.setProperty("--secondary-color", "#4e3c51");
-      document.documentElement.style.setProperty("--text-color", "#E3E3E3");
-      document.documentElement.style.setProperty("--back-color", "#292B2C");
+      document.documentElement.style.setProperty("--main-color", "#006666");
+      document.documentElement.style.setProperty(
+        "--secondary-color",
+        "#9DBCBC"
+      );
+      document.documentElement.style.setProperty("--text-color", "#6B6B6B");
+      document.documentElement.style.setProperty("--back-color", "#B7B7B7");
     }
   }, [theme])
 
