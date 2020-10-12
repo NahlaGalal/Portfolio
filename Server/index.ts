@@ -1,9 +1,8 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-const http = require("http");
 
-import router from "./router"
+import router from "./router";
 
 const MONGODB_URI = "mongodb://localhost/portfolio";
 
@@ -17,5 +16,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(http.createServer(app.listen(4000, () => console.log("Hello"))))
+  .then(() => console.log("Connected"))
   .catch((err) => console.log(err));
+
+app.listen(4000, () => console.log("Hello"));
