@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose";
-import { ISkills } from "./skills";
+import { ISkillsDoc } from "./skills";
 
 interface IProjects {
   name: string;
@@ -13,7 +13,13 @@ interface IProjects {
     language: string;
     percent: number;
   }[];
-  skills: ISkills[];
+  skills: ISkillsDoc["_id"][];
+}
+
+interface IProjectsDoc extends IProjects, mongoose.Document {}
+
+interface IProjectModel extends mongoose.Model<IProjectsDoc> {
+  build(attr: IProjects): IProjectsDoc;
 }
 
 const projectSchema: mongoose.Schema = new mongoose.Schema({
@@ -42,8 +48,11 @@ const projectSchema: mongoose.Schema = new mongoose.Schema({
   ],
 });
 
-const Project = mongoose.model("Project", projectSchema); 
+const Project = mongoose.model<IProjectsDoc, IProjectModel>(
+  "Project",
+  projectSchema
+);
 
-const build = (attr: IProjects) => new Project(attr);
+projectSchema.statics.build = (attr: IProjects) => new Project(attr);
 
 export default Project;
