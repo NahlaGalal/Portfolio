@@ -1,17 +1,15 @@
-import * as mongoose from "mongoose";
+import { Schema, model, Model, Document } from "mongoose";
 
 interface ISkills {
   name: string;
   image: string;
 }
 
-export interface ISkillsDoc extends mongoose.Document, ISkills {};
+export interface ISkillsDoc extends Document, ISkills {}
 
-interface ISkillsModel extends mongoose.Model<ISkillsDoc> {
-  build(attr: ISkills): ISkillsDoc;
-}
+interface ISkillsModel extends Model<ISkillsDoc> {}
 
-const skillsSchema: mongoose.Schema = new mongoose.Schema({
+const skillsSchema: Schema = new Schema({
   name: {
     type: String,
     required: true,
@@ -22,8 +20,6 @@ const skillsSchema: mongoose.Schema = new mongoose.Schema({
   },
 });
 
-skillsSchema.statics.build = (attr: ISkills) => new Skills(attr);
-
-const Skills = mongoose.model<ISkillsDoc, ISkillsModel>("Skill", skillsSchema);
+const Skills = model<ISkillsDoc, ISkillsModel>("Skill", skillsSchema);
 
 export default Skills;
