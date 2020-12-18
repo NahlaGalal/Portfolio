@@ -3,7 +3,7 @@ import { ISkillsDoc } from "./skills";
 
 interface IProjects {
   name: string;
-  "main-image": string;
+  main_image: string;
   images?: string[];
   details: string;
   link?: string;
@@ -16,19 +16,19 @@ interface IProjects {
   skills: ISkillsDoc["_id"][];
 }
 
-interface IProjectsDoc extends IProjects, Document {}
+export interface IProjectsDoc extends IProjects, Document {}
 
 interface IProjectModel extends Model<IProjectsDoc> {}
 
 const projectSchema: Schema = new Schema({
   name: String,
-  "main-image": String,
+  main_image: String,
   images: [String],
   details: String,
   link: String,
   code: String,
   text: String,
-  Languages: [
+  languages: [
     {
       language: String,
       percent: {
@@ -40,8 +40,8 @@ const projectSchema: Schema = new Schema({
   ],
   skills: [
     {
-      id: Schema.Types.ObjectId,
-      ref: "skill",
+      type: Schema.Types.ObjectId,
+      ref: "Skill",
     },
   ],
 });
