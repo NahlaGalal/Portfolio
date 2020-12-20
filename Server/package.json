@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "@types/body-parser": "^1.19.0",
+    "@types/multer": "^1.4.5",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.9",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.8",

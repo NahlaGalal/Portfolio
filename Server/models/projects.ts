@@ -8,7 +8,8 @@ interface IProjects {
   details: string;
   link?: string;
   code?: string;
-  text: string;
+  backcolor?: string;
+  text?: string;
   languages: {
     language: string;
     percent: number;
@@ -28,6 +29,7 @@ const projectSchema: Schema = new Schema({
   link: String,
   code: String,
   text: String,
+  backcolor: String,
   languages: [
     {
       language: String,

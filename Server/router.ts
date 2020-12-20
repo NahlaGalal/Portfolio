@@ -7,6 +7,6 @@ router.get("/", getAllProjects);
 
 router.get("/project", getProject);
 
-// router.post("/project", addProjects)
+router.post("/project", addProjects)
 
 export default router;
