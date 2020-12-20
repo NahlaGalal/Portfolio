@@ -1,35 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import profile from "../images/jpgImages/profile.jpg";
 import phoneIcon from "../images/icons/phone.svg";
 import mailIcon from "../images/icons/mail.svg";
 import locationIcon from "../images/icons/location.svg";
-import data from "../util/data.js";
 import Github from "../images/icons/github.svg";
 import Facebook from "../images/icons/facebook.svg";
 import Twitter from "../images/icons/twitter.svg";
 import Linkedin from "../images/icons/linkedin.svg";
 
-const Home = (props) => {
+interface IProject {
+  _id: string;
+  name: string;
+  main_image: string;
+  images?: string[];
+  details: string;
+  link?: string;
+  code?: string;
+  backcolor?: string;
+  text: string;
+  languages: {
+    language: string;
+    percent: number;
+  }[];
+  skills: {
+    name: string;
+    image: string;
+  };
+}
+
+const Home: React.FC<any> = ({ location }) => {
   const { register, handleSubmit } = useForm();
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
+  const [projects, setProjects] = useState<IProject[]>([]);
 
   useEffect(() => {
-    const element = document.getElementById(
-      props.location.hash.replace("#", "")
-    );
+    axios.get("http://localhost:4000").then((data) => setProjects(data.data));
+  }, []);
+
+  useEffect(() => {
+    const element = document.getElementById(location.hash.replace("#", ""));
     setTimeout(() => {
       window.scrollTo({
         behavior: element ? "smooth" : "auto",
         top: element ? element.offsetTop : 0,
       });
     }, 100);
-  }, [props.location]);
+  }, [location]);
 
   const generatePages = () => {
     let pagesListItems = [];
-    for (let i = 1; i <= Math.ceil(data.length / 3); i++) {
+    for (let i = 1; i <= Math.ceil(projects.length / 3); i++) {
       pagesListItems.push(
         <li key={i} className={`${i === page ? "active" : ""}`}>
           <button onClick={() => setPage(i)}>{i}</button>
@@ -39,10 +62,14 @@ const Home = (props) => {
     return pagesListItems;
   };
 
-  const changeInput = (e) => {
-    if(e.target.value) e.target.classList.add("label-top");
-    else e.target.classList.remove("label-top")
-  }
+  const changeInput = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    if (e.target.value) e.target.classList.add("label-top");
+    else e.target.classList.remove("label-top");
+  };
 
   return (
     <div className="Home">
@@ -54,10 +81,9 @@ const Home = (props) => {
         <h1>Hello,</h1>
         <h2>I'm Nahla Galal</h2>
         <p>
-          I'm a front end developer , I have started
-          this career since April 2017 till now. I love learning new features
-          and working in teams to take advantages from each other. I can learn
-          and work under stress
+          I'm a front end developer , I have started this career since April
+          2017 till now. I love learning new features and working in teams to
+          take advantages from each other. I can learn and work under stress
         </p>
         <div className="Home__header__contacts">
           <div className="Home__header__contacts__icon">
@@ -79,19 +105,19 @@ const Home = (props) => {
         <section className="Home__projects" id="projects">
           <h2 className="Home__heading">My Projects</h2>
           <span className="Home__heading-border"></span>
-          {data.slice((page - 1) * 3, page * 3).map((project) => (
-            <figure className="Home__projects__project" key={project.id}>
+          {projects.slice((page - 1) * 3, page * 3).map((project) => (
+            <figure className="Home__projects__project" key={project._id}>
               <div
                 className="Home__projects__project__image"
                 style={{ backgroundColor: project.backcolor }}
               >
                 <img
-                  src={project["main-image"]}
+                  src={project.main_image}
                   alt={`${project.name} page screenshot`}
                 />
               </div>
               <figcaption>
-                <Link to={`/project/${project.id}`}>{project.name}</Link>
+                <Link to={`/project/${project._id}`}>{project.name}</Link>
               </figcaption>
             </figure>
           ))}
@@ -173,9 +199,3 @@ const Home = (props) => {
 };
 
 export default Home;
-
-/**
- * page 1 ==> 0 => 2
- * page 2 ==> 3 => 5
- * page 3 ==> 6 => 8
- */

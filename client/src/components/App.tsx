@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./Home";
-import Projects from "./Projects";
+import Project from "./Project";
 import SwitchTheme from "./SwitchTheme";
 
-const Router = () => {
+const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <SwitchTheme />
       <Switch>
         <Route exact component={Home} path="/" />
-        <Route exact component={Projects} path="/project/:id" />
+        <Route exact component={Project} path="/project/:id" />
       </Switch>
     </BrowserRouter>
   );

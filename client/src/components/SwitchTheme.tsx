@@ -4,7 +4,7 @@ const SwitchTheme = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    if(theme === "dark") {
+    if (theme === "dark") {
       document.documentElement.style.setProperty("--main-color", "#9DBCBC");
       document.documentElement.style.setProperty(
         "--secondary-color",
@@ -12,7 +12,7 @@ const SwitchTheme = () => {
       );
       document.documentElement.style.setProperty("--text-color", "#B7B7B7");
       document.documentElement.style.setProperty("--back-color", "#6B6B6B");
-    }else {
+    } else {
       document.documentElement.style.setProperty("--main-color", "#006666");
       document.documentElement.style.setProperty(
         "--secondary-color",
@@ -21,13 +21,11 @@ const SwitchTheme = () => {
       document.documentElement.style.setProperty("--text-color", "#6B6B6B");
       document.documentElement.style.setProperty("--back-color", "#B7B7B7");
     }
-  }, [theme])
+  }, [theme]);
 
   return (
     <div className="Theme">
-      <span className={`Theme__current ${theme}`}>
-        {theme}
-      </span>
+      <span className={`Theme__current ${theme}`}>{theme}</span>
       <button onClick={() => setTheme("light")} className={`Theme__${theme}`}>
         <span>Light</span>
       </button>

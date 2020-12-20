@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {NavLink, Link} from "react-router-dom"
+import { NavLink, Link } from "react-router-dom";
 
-const Navbar = () => {
-  const [navigationMenu, setNavigationMenu] = useState(false);
+const Navbar:React.FC = () => {
+  const [navigationMenu, setNavigationMenu] = useState<boolean>(false);
 
   const toggleNavigationMenu = () => setNavigationMenu(!navigationMenu);
 
