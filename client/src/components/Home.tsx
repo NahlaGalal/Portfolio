@@ -112,7 +112,7 @@ const Home: React.FC<any> = ({ location }) => {
                 style={{ backgroundColor: project.backcolor }}
               >
                 <img
-                  src={project.main_image}
+                  src={`http://localhost:4000/${project.main_image}`}
                   alt={`${project.name} page screenshot`}
                 />
               </div>

@@ -37,12 +37,15 @@ const Project: React.FC<any> = ({ match }) => {
     skills: [],
   });
   const [imageIndex, setImageIndex] = useState<number>(0);
-  const [image, setImage] = useState<string>(project?.main_image || "");
+  const [image, setImage] = useState<string>(project.main_image);
 
   useEffect(() => {
     axios
       .get(`http://localhost:4000/project?id=${match.params.id}`)
-      .then((data) => setProject(data.data.project));
+      .then((data) => {
+        setProject(data.data.project);
+        setImage(data.data.project.main_image);
+      });
   }, [match]);
 
   const generateNextImage = () => {
@@ -63,7 +66,11 @@ const Project: React.FC<any> = ({ match }) => {
           <h1>{project.name}</h1>
           <section className="Project__carousel">
             <div className="Project__carousel__image">
-              <img src={project.main_image} alt="Project screenshot" />
+              <img
+                src={`http://localhost:4000/${image}`}
+                // src={image}
+                alt="Project screenshot"
+              />
             </div>
             <div className="Project__carousel__gallery">
               <button onClick={generatePrevImage}>
@@ -71,14 +78,15 @@ const Project: React.FC<any> = ({ match }) => {
               </button>
               <img
                 onClick={() => setImage(project.images[imageIndex])}
-                src={project.images[imageIndex]}
+                src={`http://localhost:4000/${project.images[imageIndex]}`}
                 alt="Other screenshots of the project"
               />
               {project.images[imageIndex + 1] && (
                 <img
                   onClick={() => setImage(project.images[imageIndex + 1])}
-                  // src={project.images[imageIndex + 1]}
-                  src="https://localhost:4000/data/curey1.jpg"
+                  src={`http://localhost:4000/${
+                    project.images[imageIndex + 1]
+                  }`}
                   alt="Other screenshots of the project"
                 />
               )}
@@ -113,7 +121,11 @@ const Project: React.FC<any> = ({ match }) => {
             <ul className="Project__info__skills">
               {project.skills.map((skill) => (
                 <li key={skill.name}>
-                  <img src={skill.image} alt={skill.name} />
+                  <img
+                    src={`http://localhost:4000/${skill.image}`}
+                    alt={skill.name}
+                    title={skill.name}
+                  />
                 </li>
               ))}
             </ul>
