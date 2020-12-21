@@ -74,7 +74,7 @@
       margin-top: 40px;
       &__icon {
         border-radius: 50%;
-        background-color: var(--secondary-color);
+        background-color: var(--main-color);
         height: 48px;
         display: flex;
         justify-content: center;
@@ -191,7 +191,7 @@
         margin: 24px 0;
         input,
         textarea {
-          border: 2px solid var(--secondary-color);
+          border: 2px solid var(--main-color);
           background-color: transparent;
           color: var(--main-color);
           box-sizing: border-box;
@@ -252,7 +252,7 @@
         grid-row: 3/4;
         background-image: url("../images/jpgImages/contact.jpg");
         background-size: cover;
-        background-color: var(--back-color);
+        background-color: #ddd;
         background-blend-mode: overlay;
         height: 100%;
       }
@@ -261,6 +261,7 @@
         text-align: center;
         font-weight: $regular-font;
         line-height: 30px;
+        color: #6b6b6b;
         @media screen and (min-width: 678px) {
           max-width: 273px;
           margin: 80px auto 56px;

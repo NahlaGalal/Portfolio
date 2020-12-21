@@ -68,7 +68,6 @@ const Project: React.FC<any> = ({ match }) => {
             <div className="Project__carousel__image">
               <img
                 src={`http://localhost:4000/${image}`}
-                // src={image}
                 alt="Project screenshot"
               />
             </div>
@@ -98,7 +97,10 @@ const Project: React.FC<any> = ({ match }) => {
           <section className="Project__info">
             <h2 className="heading">Project info</h2>
             <span className="heading-border"></span>
-            <p>{project.details}</p>
+            <p>
+              {project.details}
+              {!project.details.endsWith(".") && "."}
+            </p>
             <h2 className="heading">Languages</h2>
             <span className="heading-border"></span>
             <ul className="Project__info__languages">
@@ -118,6 +120,7 @@ const Project: React.FC<any> = ({ match }) => {
               ))}
             </ul>
             <h2 className="heading">Skills</h2>
+            <span className="heading-border"></span>
             <ul className="Project__info__skills">
               {project.skills.map((skill) => (
                 <li key={skill.name}>
@@ -131,12 +134,22 @@ const Project: React.FC<any> = ({ match }) => {
             </ul>
             <div className="links">
               {project.link && (
-                <a href={project.link} className="btn">
+                <a
+                  href={project.link}
+                  className="btn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {project.text}
                   <span>GO!</span>
                 </a>
               )}
-              <a href={project.code} className="btn">
+              <a
+                href={project.code}
+                className="btn"
+                target="_blank"
+                rel="noreferrer"
+              >
                 View code<span>GO!</span>
               </a>
             </div>

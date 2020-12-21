@@ -81,9 +81,10 @@ const Home: React.FC<any> = ({ location }) => {
         <h1>Hello,</h1>
         <h2>I'm Nahla Galal</h2>
         <p>
-          I'm a front end developer , I have started this career since April
-          2017 till now. I love learning new features and working in teams to
-          take advantages from each other. I can learn and work under stress
+          Computer Science graduate passionate about Front-end. Highly-capable
+          leader, Leading committees at my faculty, Leading front-end at my
+          graduation project. Like to organize events, multitasking and
+          learning, Proficient in HTML, CSS.
         </p>
         <div className="Home__header__contacts">
           <div className="Home__header__contacts__icon">
@@ -103,8 +104,8 @@ const Home: React.FC<any> = ({ location }) => {
       <main>
         {/** Projects section */}
         <section className="Home__projects" id="projects">
-          <h2 className="Home__heading">My Projects</h2>
-          <span className="Home__heading-border"></span>
+          <h2 className="heading">My Projects</h2>
+          <span className="heading-border"></span>
           {projects.slice((page - 1) * 3, page * 3).map((project) => (
             <figure className="Home__projects__project" key={project._id}>
               <div
@@ -125,8 +126,8 @@ const Home: React.FC<any> = ({ location }) => {
         </section>
         {/** Contacts section */}
         <section className="Home__contact" id="contact">
-          <h2 className="Home__heading">Contact us</h2>
-          <span className="Home__heading-border"></span>
+          <h2 className="heading">Contact us</h2>
+          <span className="heading-border"></span>
           <form
             className="Home__contact__form"
             onSubmit={handleSubmit((data) => console.log(data))}
@@ -171,22 +172,38 @@ const Home: React.FC<any> = ({ location }) => {
             <h3>OR you can follow me on social media accounts</h3>
             <ul>
               <li>
-                <a href="https://www.facebook.com/NhlaaGalal/">
+                <a
+                  href="https://www.facebook.com/NhlaaGalal/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img src={Facebook} alt="Facebbok link icon" />
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/Nhla_glal">
+                <a
+                  href="https://twitter.com/Nhla_glal"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img src={Twitter} alt="Twitter link icon" />
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/nahla-galal-80347b141/">
+                <a
+                  href="https://www.linkedin.com/in/nahla-galal/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img src={Linkedin} alt="Linkedin link icon" />
                 </a>
               </li>
               <li>
-                <a href="https://github.com/NahlaGalal">
+                <a
+                  href="https://github.com/NahlaGalal"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img src={Github} alt="Github link icon" />
                 </a>
               </li>
