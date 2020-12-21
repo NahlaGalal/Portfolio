@@ -1,4 +1,3 @@
-import { json } from "body-parser";
 import { Request, Response, NextFunction } from "express";
 import Project, { IProjectsDoc } from "./models/projects";
 import Skill from "./models/skills";
@@ -8,22 +7,9 @@ export const getAllProjects = (
   res: Response,
   next: NextFunction
 ) => {
-  let projects: IProjectsDoc[];
-  Project.find().then((doc) => {
-    projects = [...doc];
-    (async () => {
-      let promises = projects.map(async (project) => {
-        const projectSkills = await Skill.find({
-          _id: { $in: [...project.skills] },
-        });
-        project.skills = projectSkills;
-        return project;
-      });
-
-      const response = await Promise.all(promises);
-      res.json(response);
-    })();
-  });
+  Project.find({}, "name main_image backcolor")
+    .sort({ _id: -1 })
+    .then((doc) => res.json([...doc]));
 };
 
 export const getProject = (req: Request, res: Response, next: NextFunction) => {
