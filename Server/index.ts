@@ -45,4 +45,6 @@ mongoose
   .then(() => console.log("Connected"))
   .catch((err) => console.log(err));
 
-app.listen(4000, () => console.log("Hello"));
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => console.log("Hello"));
