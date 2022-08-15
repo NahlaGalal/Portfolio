@@ -5,3 +5,13 @@ export interface ICarousel {
   imageIndex: number;
   images: string[];
 }
+
+export interface ISkills {
+  skills: {
+    name: string;
+    image: string;
+  }[];
+  link?: string;
+  text: string;
+  code?: string;
+}

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { IProject } from "../../components/Projects/Types";
 
 import Carousel from "./Carousel";
+import Skills from "./Skills";
 
 const Project: React.FC = () => {
   const [project, setProject] = useState<IProject>({
@@ -40,14 +41,14 @@ const Project: React.FC = () => {
   };
 
   const setImageHandler = (index: number) => {
-    setImage(project.images[index])
-  }
+    setImage(project.images[index]);
+  };
 
   return project._id ? (
-    <main className="sm:grid sm:grid-cols-[repeat(2,_1fr)] sm:gap-10">
+    <main className="px-[5%] sm:px-[10%] sm:grid sm:grid-cols-[repeat(2,_1fr)] sm:gap-10">
       <h1
         className="
-          mb-6 sm:col-[1/3] 
+          mt-10 mb-6 sm:col-[1/3] 
           [ text-center text-5xl font-bold ] 
           [ text-darkGreen dark:text-lightGreen ]"
       >
@@ -73,6 +74,20 @@ const Project: React.FC = () => {
           imageIndex={imageIndex}
           setImageHandler={setImageHandler}
           images={project.images}
+        />
+      </section>
+      <section>
+        <h2 className="ml-12 heading">Project info</h2>
+        <span className="ml-[90px] heading-border"></span>
+        <p className="leading-6 [ mt-4 mb-6 ]">
+          {project.details}
+          {!project.details.endsWith(".") && "."}
+        </p>
+        <Skills
+          skills={project.skills}
+          text={project.text}
+          code={project.code}
+          link={project.link}
         />
       </section>
     </main>
