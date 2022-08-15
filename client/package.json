@@ -10,6 +10,7 @@
     "@types/node": "^16.11.48",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "axios": "^0.27.2",
     "emailjs-com": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,8 +45,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000",
+  "proxy": "http://localhost:5000",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"

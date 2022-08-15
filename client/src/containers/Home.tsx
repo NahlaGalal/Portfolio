@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Projects from "../components/Projects";
 import Resume from "../components/Resume";
 import Sidebar from "../components/Sidebar";
 
@@ -15,6 +16,8 @@ const Home = () => {
         return <About />;
       case "Resume":
         return <Resume />;
+      case "Projects":
+        return <Projects />;
       case "Contact":
         return <Contact />;
       default:

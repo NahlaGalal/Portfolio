@@ -44,6 +44,9 @@
 }
 
 @layer utilities {
+  .custom-box-shadow {
+    box-shadow: 0 4px 6px rgba(78, 60, 81, 0.25);
+  }
   .custom-transition {
     transition: all 0.4s ease-in-out;
   }
