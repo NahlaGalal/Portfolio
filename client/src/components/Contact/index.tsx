@@ -7,30 +7,34 @@ import { IFormTypes } from "./Types";
 import ContactFormUI from "./FormUI";
 
 const Contact = () => {
-  const { register, handleSubmit, watch } = useForm<IFormTypes>();
-  const form = useRef<any>();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IFormTypes>();
+  const form = useRef<HTMLFormElement>(null);
 
   const onSubmitHandler = (data: IFormTypes) => {
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID || "",
-        process.env.REACT_APP_TEMP_ID || "",
-        form.current,
-        process.env.REACT_APP_PUBLIC_KEY || ""
-      )
-      .then((res) => console.log(res.text))
-      .catch((err) => console.log(err.text));
+    if (form.current)
+      emailjs
+        .sendForm(
+          process.env.REACT_APP_SERVICE_ID || "",
+          process.env.REACT_APP_TEMP_ID || "",
+          form.current,
+          process.env.REACT_APP_PUBLIC_KEY || ""
+        )
+        .then((res) => console.log(res.text))
+        .catch((err) => console.log(err.text));
   };
 
   return (
     <section className="sm:grid sm:grid-cols-[1fr_1fr] gap-x-10 items-center">
       <h2 className="heading col-[1/3]">Contact us</h2>
       <span className="heading-border col-[1/3]"></span>
-      <ContactFormUI
-        register={register}
-        onSubmit={handleSubmit(onSubmitHandler)}
-        watch={watch}
-      />
+      <form onSubmit={handleSubmit(onSubmitHandler)} ref={form}>
+        <ContactFormUI register={register} watch={watch} errors={errors} />
+      </form>
       <div
         className="
         mt-8 sm:h-full

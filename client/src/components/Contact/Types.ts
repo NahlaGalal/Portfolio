@@ -1,4 +1,4 @@
-import { UseFormRegister, UseFormWatch } from "react-hook-form";
+import { FieldErrorsImpl, UseFormRegister, UseFormWatch } from "react-hook-form";
 
 export interface IFormTypes {
   name: string;
@@ -8,8 +8,6 @@ export interface IFormTypes {
 
 export interface IFormUIProps {
   register: UseFormRegister<IFormTypes>;
-  onSubmit: (
-    e?: React.BaseSyntheticEvent<object, any, any> | undefined
-  ) => Promise<void>;
   watch: UseFormWatch<IFormTypes>;
+  errors: FieldErrorsImpl<IFormTypes>;
 }
