@@ -15,6 +15,8 @@ interface IProjects {
     percent: number;
   }[];
   skills: ISkillsDoc["_id"][];
+  start_date: Date;
+  end_data: Date;
 }
 
 export interface IProjectsDoc extends IProjects, Document {}
@@ -44,6 +46,8 @@ const projectSchema: Schema = new Schema({
       ref: "Skill",
     },
   ],
+  start_date: Date,
+  end_date: Date,
 });
 
 const Project = model<IProjectsDoc, Model<IProjectsDoc>>(
