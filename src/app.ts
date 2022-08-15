@@ -1,7 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
+import mongoose from "mongoose";
 import multer from "multer";
 import path from "path";
+
+require("dotenv").config();
+
+const MONGODB_URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.a1cox.mongodb.net/Portfolio?retryWrites=true&w=majority`;
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -27,6 +32,11 @@ app.use(
   ])
 );
 app.use("/data", express.static(path.join(__dirname, "data")));
+
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => console.log("Connected"))
+  .catch((err) => console.log(err));
 
 const port = process.env.PORT || 5000;
 
