@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
+import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
+import { AiFillTwitterCircle } from "react-icons/ai";
 import emailjs from "emailjs-com";
 import { IFormTypes } from "./Types";
 import ContactFormUI from "./FormUI";
@@ -11,22 +13,17 @@ const Contact = () => {
   const onSubmitHandler = (data: IFormTypes) => {
     emailjs
       .sendForm(
-        "service_8ydhw15",
-        "template_cca9dah",
+        process.env.REACT_APP_SERVICE_ID || "",
+        process.env.REACT_APP_TEMP_ID || "",
         form.current,
-        "user_dEnbi19Q2b1ZYkozc2rY1"
+        process.env.REACT_APP_PUBLIC_KEY || ""
       )
       .then((res) => console.log(res.text))
       .catch((err) => console.log(err.text));
   };
 
   return (
-    <section
-      className="
-        [ px-[5%] sm:px-[10%] ] 
-        [ sm:grid sm:grid-cols-[1fr_1fr] gap-x-10 items-center ]
-        w-full mt-20"
-    >
+    <section className="sm:grid sm:grid-cols-[1fr_1fr] gap-x-10 items-center">
       <h2 className="heading col-[1/3]">Contact us</h2>
       <span className="heading-border col-[1/3]"></span>
       <ContactFormUI
@@ -34,6 +31,71 @@ const Contact = () => {
         onSubmit={handleSubmit(onSubmitHandler)}
         watch={watch}
       />
+      <div
+        className="
+        mt-8 sm:h-full
+        [ sm:col-[1/2] sm:row-[3/4] ]
+        [ sm:bg-cover sm:bg-lightGrey sm:bg-blend-overlay bg-contact_background ]"
+      >
+        <h3
+          className="
+          [ text-2xl text-center leading-7 ]
+          text-darkGrey sm:max-w-[273px] 
+          [ sm:mt-20 sm:mx-auto sm:mb-14 ]"
+        >
+          OR you can follow me on social media accounts
+        </h3>
+        <ul className="[ flex justify-center items-center ] mt-6">
+          <li className="mr-4">
+            <a
+              href="https://www.facebook.com/NhlaaGalal/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsFacebook
+                size={32}
+                title="Facebook profile link"
+                color="#006666"
+              />
+            </a>
+          </li>
+          <li className="mr-4">
+            <a
+              href="https://twitter.com/Nhla_glal"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillTwitterCircle
+                size={32}
+                title="Twitter profile link"
+                color="#006666"
+              />
+            </a>
+          </li>
+          <li className="mr-4">
+            <a
+              href="https://www.linkedin.com/in/nahla-galal/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsLinkedin
+                size={32}
+                title="Linkedin profile link"
+                color="#006666"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/NahlaGalal"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub size={32} title="Github profile link" color="#006666" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };

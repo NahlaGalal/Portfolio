@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       <Sidebar onClick={onChangeSecHandler} />
-      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] ]">
+      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] w-full ]">
         {getCurrentSection()}
       </main>
     </>

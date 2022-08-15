@@ -32,6 +32,15 @@
   .btn {
     @apply h-10 rounded-xl block text-base relative overflow-hidden cursor-pointer bg-darkGrey dark:bg-lightGrey text-lightGrey dark:text-darkGrey
   }
+
+  .btn span {
+    right: -200px;
+    @apply absolute top-0 w-full h-full flex items-center justify-center custom-transition
+  }
+
+  .btn:hover span {
+    @apply right-0 rounded-xl bg-darkGreen dark:bg-lightGreen
+  }
 }
 
 @layer utilities {

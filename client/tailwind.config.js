@@ -11,7 +11,11 @@ module.exports = {
       lightGrey: "#EEEEEE",
       darkGrey: "#6B6B6B",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        contact_background: "url('./images/contact.jpg')",
+      },
+    },
   },
   darkMode: "class",
 };
