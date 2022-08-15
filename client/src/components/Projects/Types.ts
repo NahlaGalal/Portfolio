@@ -8,10 +8,6 @@ export interface IProject {
   code?: string;
   backcolor?: string;
   text: string;
-  languages: {
-    language: string;
-    percent: number;
-  }[];
   skills: {
     name: string;
     image: string;

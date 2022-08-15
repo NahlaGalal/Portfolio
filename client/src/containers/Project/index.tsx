@@ -14,7 +14,6 @@ const Project: React.FC = () => {
     images: [],
     details: "",
     text: "",
-    languages: [],
     skills: [],
     start_date: new Date(),
     end_data: new Date(),
