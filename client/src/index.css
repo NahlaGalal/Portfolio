@@ -3,3 +3,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 text-base font-roboto bg-lightGrey dark:bg-darkGrey text-darkGrey dark:text-lightGrey;
+  }
+
+  #root {
+    @apply flex items-center min-h-screen
+  }
+  
+  a {
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  /* Button */
+  .btn {
+    @apply h-10 rounded-xl block text-base relative overflow-hidden cursor-pointer bg-darkGrey dark:bg-lightGrey text-lightGrey dark:text-darkGrey
+  }
+}
