@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import multer from "multer";
 import path from "path";
 import { DestinationCallback } from "./types";
+import router from "./routes";
 
 require("dotenv").config();
 
@@ -41,6 +42,7 @@ app.use(
   ])
 );
 app.use("/data", express.static(path.join(__dirname, "data")));
+app.use(router);
 
 mongoose
   .connect(MONGODB_URI)
