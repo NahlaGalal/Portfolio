@@ -3,10 +3,10 @@ import { getAllProjects, getProject, addProject } from "./controllers/projects";
 
 const router = Router();
 
-router.get("/", getAllProjects);
+router.get("/api/", getAllProjects);
 
-router.get("/project", getProject);
+router.get("/api/project", getProject);
 
-router.post("/project", addProject);
+router.post("/api/project", addProject);
 
 export default router;
