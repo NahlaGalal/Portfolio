@@ -1,18 +1,27 @@
-import express from "express";
+import express, { Request } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import multer from "multer";
 import path from "path";
+import { DestinationCallback } from "./types";
 
 require("dotenv").config();
 
 const MONGODB_URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.a1cox.mongodb.net/Portfolio?retryWrites=true&w=majority`;
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+  destination: (
+    req: Request,
+    file: Express.Multer.File,
+    cb: DestinationCallback
+  ) => {
     cb(null, "data");
   },
-  filename: (req, file, cb) => {
+  filename: (
+    req: Request,
+    file: Express.Multer.File,
+    cb: DestinationCallback
+  ) => {
     cb(
       null,
       new Date().toISOString().replace(/:/g, "-") + "-" + file.originalname
