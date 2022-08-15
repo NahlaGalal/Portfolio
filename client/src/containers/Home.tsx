@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import About from "../components/About";
+import Contact from "../components/Contact";
 import Sidebar from "../components/Sidebar";
 
 const Home = () => {
@@ -11,6 +12,8 @@ const Home = () => {
     switch (section) {
       case "Home":
         return <About />;
+      case "Contact":
+        return <Contact />;
       default:
         return <></>;
     }
@@ -19,9 +22,7 @@ const Home = () => {
   return (
     <>
       <Sidebar onClick={onChangeSecHandler} />
-      <main
-        className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] ]"
-      >
+      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] ]">
         {getCurrentSection()}
       </main>
     </>
