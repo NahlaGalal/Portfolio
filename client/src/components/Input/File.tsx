@@ -1,13 +1,13 @@
 import React from "react";
-import { IProps } from "./Types";
+import { IFile } from "./Types";
 
-const Input: React.FC<IProps> = ({
+const File: React.FC<IFile> = ({
   id,
   label,
   type,
   register,
-  value,
   error,
+  multiple,
 }) => {
   return (
     <div className="my-6">
@@ -20,21 +20,17 @@ const Input: React.FC<IProps> = ({
             [ border-2 border-darkGreen dark:border-lightGreen ]
             [ bg-lightGrey dark:bg-darkGrey ]
             [ w-full h-12 ] 
-            rounded-xl text-base px-4 custom-transition 
+            rounded-xl text-base custom-transition 
+            [ px-4 pt-2 ]
             focus:outline-none 
             peer"
+          multiple={multiple}
           {...register}
         />
         <label
           className={`
-            [ peer-focus:top-0 peer-focus:h-6 peer-focus:px-1 ]
-            [ peer-focus:bg-lightGrey dark:peer-focus:bg-darkGrey ]
-            ${
-              value
-                ? "top-0 h-6 px-1 [ bg-lightGrey dark:bg-darkGrey ]"
-                : "top-1/2"
-            }
-            absolute custom-transition
+            "top-0 h-6 px-1 [ bg-lightGrey dark:bg-darkGrey ]"
+            absolute
             [ -translate-y-1/2 left-4 ]
             [ text-darkGreen dark:text-lightGreen ]
           `}
@@ -48,4 +44,4 @@ const Input: React.FC<IProps> = ({
   );
 };
 
-export default Input;
+export default File;
