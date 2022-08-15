@@ -14,10 +14,6 @@ interface IProjects {
   code?: string;
   backcolor?: string;
   text?: string;
-  languages: {
-    language: string;
-    percent: number;
-  }[];
   skills: ISkillsDoc["_id"][];
   start_date: Date;
   end_data: Date;

@@ -10,16 +10,6 @@ const projectSchema: Schema = new Schema({
   code: String,
   text: String,
   backcolor: String,
-  languages: [
-    {
-      language: String,
-      percent: {
-        type: Number,
-        min: 0,
-        max: 100,
-      },
-    },
-  ],
   skills: [
     {
       type: Schema.Types.ObjectId,

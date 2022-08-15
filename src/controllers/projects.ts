@@ -51,7 +51,6 @@ export const addProject = (req: Request, res: Response) => {
     await new Project({
       ...projectData,
       skills: skillsIds,
-      languages: JSON.parse(projectData.languages),
       main_image: main_image[0].path,
       images: images.map((img) => img.path),
     }).save();
