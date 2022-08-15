@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Resume from "../components/Resume";
 import Sidebar from "../components/Sidebar";
 
 const Home = () => {
@@ -12,6 +13,8 @@ const Home = () => {
     switch (section) {
       case "Home":
         return <About />;
+      case "Resume":
+        return <Resume />;
       case "Contact":
         return <Contact />;
       default:
