@@ -13,7 +13,7 @@ export interface IProject {
     image: string;
   }[];
   start_date: Date;
-  end_data: Date;
+  end_date: Date;
 }
 
 export interface IPaging {

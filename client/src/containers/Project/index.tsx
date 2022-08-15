@@ -16,7 +16,7 @@ const Project: React.FC = () => {
     text: "",
     skills: [],
     start_date: new Date(),
-    end_data: new Date(),
+    end_date: new Date(),
   });
   const [imageIndex, setImageIndex] = useState<number>(0);
   const [image, setImage] = useState<string>(project.main_image);
