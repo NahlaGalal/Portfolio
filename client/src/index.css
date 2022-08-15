@@ -24,3 +24,9 @@
     @apply h-10 rounded-xl block text-base relative overflow-hidden cursor-pointer bg-darkGrey dark:bg-lightGrey text-lightGrey dark:text-darkGrey
   }
 }
+
+@layer utilities {
+  .custom-transition {
+    transition: all 0.4s ease-in-out;
+  }
+}
