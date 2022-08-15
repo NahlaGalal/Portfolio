@@ -1,11 +1,11 @@
-import express from 'express';
+import express from "express";
+import bodyParser from "body-parser";
+
 const app = express();
-const port = 4000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-});
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log("Listening"));
