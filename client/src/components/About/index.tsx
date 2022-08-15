@@ -3,6 +3,7 @@ import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { FaHackerrank } from "react-icons/fa";
 import profile from "../../images/profile.jpg";
 import { Link } from "react-router-dom";
+import ListItem from "./ListItem";
 
 const About = () => {
   return (
@@ -38,52 +39,24 @@ const About = () => {
           learning, Proficient in HTML, CSS.
         </p>
         <div className="[ grid grid-cols-[32px_1fr] gap-2 items-center ] mt-10">
-          <span className="rounded-full bg-darkGreen h-8 [ flex justify-center items-center ]">
-            <BsTelephone size={16} color="#EEEEEE" title="Phone" />
-          </span>
-          <p
-            title="Phone"
-            className="leading-6 [ text-darkGrey dark:text-lightGrey ]"
-          >
-            01097429922
-          </p>
-          <span className="rounded-full bg-darkGreen h-8 [ flex justify-center items-center ]">
-            <HiOutlineMail size={16} color="#EEEEEE" title="Email" />
-          </span>
-          <a
-            href="mailto:nahlaglal@gmail.com"
+          <ListItem text="01097429922" title="Phone" Icon={BsTelephone} />
+          <ListItem
+            text="nahlaglal@gmail.com"
             title="Email"
-            className="leading-6 [ text-darkGrey dark:text-lightGrey ]"
-          >
-            nahlaglal@gmail.com
-          </a>
-          <span className="rounded-full bg-darkGreen h-8 [ flex justify-center items-center ]">
-            <HiOutlineLocationMarker
-              size={16}
-              color="#EEEEEE"
-              title="Address"
-            />
-          </span>
-          <p
+            Icon={HiOutlineMail}
+            href="mailto:nahlaglal@gmail.com"
+          />
+          <ListItem
+            text="Cairo, Egypt"
             title="Address"
-            className="leading-6 [ text-darkGrey dark:text-lightGrey ]"
-          >
-            Cairo, Egypt
-          </p>
-          <span className="rounded-full bg-darkGreen h-8 [ flex justify-center items-center ]">
-            <FaHackerrank
-              size={16}
-              color="#EEEEEE"
-              title="Hacker rank account"
-            />
-          </span>
-          <a
-            href="https://www.hackerrank.com/nahlaglal?hr_r=1"
+            Icon={HiOutlineLocationMarker}
+          />
+          <ListItem
+            text="@nahlaglal"
             title="Hackerrank profile"
-            className="leading-6 [ text-darkGrey dark:text-lightGrey ]"
-          >
-            @nahlaglal
-          </a>
+            Icon={FaHackerrank}
+            href="https://www.hackerrank.com/nahlaglal?hr_r=1"
+          />
         </div>
         <Link
           to="Nahla_Resume.pdf"
