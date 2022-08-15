@@ -19,3 +19,13 @@ export interface IProject {
   start_date: Date;
   end_data: Date;
 }
+
+export interface IPaging {
+  pagesNum: number;
+  page: number;
+  setPage: (page: number) => void;
+}
+
+export interface IProjectBox {
+  project: IProject;
+}
