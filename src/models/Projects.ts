@@ -1,25 +1,5 @@
 import { Schema, Model, Document, model } from "mongoose";
-import { ISkillsDoc } from "./Skills";
-
-interface IProjects {
-  name: string;
-  main_image: string;
-  images?: string[];
-  details: string;
-  link?: string;
-  code?: string;
-  backcolor?: string;
-  text?: string;
-  languages: {
-    language: string;
-    percent: number;
-  }[];
-  skills: ISkillsDoc["_id"][];
-  start_date: Date;
-  end_data: Date;
-}
-
-export interface IProjectsDoc extends IProjects, Document {}
+import { IProjectsDoc } from "../types";
 
 const projectSchema: Schema = new Schema({
   name: String,

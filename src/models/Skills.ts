@@ -1,11 +1,5 @@
 import { Schema, model, Model, Document } from "mongoose";
-
-interface ISkills {
-  name: string;
-  image: string;
-}
-
-export interface ISkillsDoc extends Document, ISkills {}
+import { ISkillsDoc } from "../types";
 
 const skillsSchema: Schema = new Schema({
   name: {
