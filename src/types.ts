@@ -27,3 +27,15 @@ interface ISkills {
 }
 
 export interface ISkillsDoc extends Document, ISkills {}
+
+interface IExperience {
+  name: string;
+  sub_name?: string;
+  description?: string;
+  start_date: string;
+  end_date: string;
+  certificate?: string;
+  type: string;
+}
+
+export interface IExperienceDoc extends Document, IExperience {}
