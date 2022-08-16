@@ -107,9 +107,7 @@ const AddProjectFormUI: React.FC<IFormUIProps> = ({
         type="file"
         id="images"
         label="Images"
-        register={register("images", {
-          required: "Images are required",
-        })}
+        register={register("images")}
         error={errors.images}
         multiple
       />

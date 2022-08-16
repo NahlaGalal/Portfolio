@@ -18,7 +18,7 @@ const Projects = () => {
       <span className="heading-border sm:col-[1/4]"></span>
 
       {/* Projects */}
-      {projects.slice(0, 3).map((project) => (
+      {projects.slice((page - 1) * 3, page * 3).map((project) => (
         <ProjectBox project={project} key={project._id} />
       ))}
 
