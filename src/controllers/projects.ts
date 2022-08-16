@@ -52,7 +52,7 @@ export const addProject = (req: Request, res: Response) => {
       ...projectData,
       skills: skillsIds,
       main_image: `data/${main_image[0].filename}`,
-      images: images.map((img) => `data/${img.filename}`),
+      images: [`data/${main_image[0].filename}`, ...(images || []).map((img) => `data/${img.filename}`)],
     }).save();
     res.json({ done: true });
   })();
