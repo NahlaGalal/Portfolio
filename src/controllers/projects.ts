@@ -51,8 +51,8 @@ export const addProject = (req: Request, res: Response) => {
     await new Project({
       ...projectData,
       skills: skillsIds,
-      main_image: main_image[0].path,
-      images: images.map((img) => img.path),
+      main_image: `data/${main_image[0].filename}`,
+      images: images.map((img) => `data/${img.filename}`),
     }).save();
     res.json({ done: true });
   })();
