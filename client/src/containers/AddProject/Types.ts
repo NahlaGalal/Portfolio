@@ -1,9 +1,9 @@
 import { FieldErrorsImpl, UseFormRegister, UseFormWatch } from "react-hook-form";
 
 export interface IFormData {
-  main_image: File;
-  images: File[];
-  skills_images: File[];
+  main_image: FileList;
+  images: FileList;
+  skills_images: FileList;
   name: string;
   details: string;
   link?: string;

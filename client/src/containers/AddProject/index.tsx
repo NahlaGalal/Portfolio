@@ -1,4 +1,4 @@
-import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import AddProjectFormUI from "./FormUI";
 import { IFormData } from "./Types";
@@ -11,8 +11,26 @@ const AddProject = () => {
     formState: { errors },
   } = useForm<IFormData>();
 
-  const onSubmitHandler = (data: IFormData) => {
-    console.log(data);
+  const onSubmitHandler = (values: IFormData) => {
+    const data = {
+      ...values,
+      main_image: values.main_image[0],
+      images: Array.from(values.images),
+      skills_images: Array.from(values.skills_images),
+    };
+
+    const formData = new FormData();
+    Object.entries(data).forEach(([key, value]: [string, any]) => {
+      if (key === "images" || key === "skills_images") {
+        value.forEach((val: File) => {
+          formData.append(key, val);
+        });
+      } else {
+        formData.append(key, value as string | Blob);
+      }
+    });
+
+    axios.post("/api/project", formData).then((data) => console.log(data));
   };
 
   return (
