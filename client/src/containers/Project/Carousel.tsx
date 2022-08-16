@@ -22,7 +22,7 @@ const Carousel: React.FC<ICarousel> = ({
       </button>
       <img
         onClick={() => setImageHandler(imageIndex)}
-        src={`http://localhost:4000/${images[imageIndex]}`}
+        src={`http://localhost:5000/${images[imageIndex]}`}
         alt="Other screenshots of the project"
         className="
               [ w-32 h-32 ] 
@@ -31,8 +31,8 @@ const Carousel: React.FC<ICarousel> = ({
       />
       {images[imageIndex + 1] && (
         <img
-          onClick={() => setImageHandler(imageIndex)}
-          src={`http://localhost:4000/${images[imageIndex + 1]}`}
+          onClick={() => setImageHandler(imageIndex + 1)}
+          src={`http://localhost:5000/${images[imageIndex + 1]}`}
           alt="Other screenshots of the project"
           className="
                 [ w-32 h-32 ] 

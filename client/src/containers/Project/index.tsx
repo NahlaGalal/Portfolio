@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MDEditor from "@uiw/react-md-editor";
 import { IProject } from "../../components/Projects/Types";
-
 import Carousel from "./Carousel";
 import Skills from "./Skills";
 
@@ -26,6 +26,7 @@ const Project: React.FC = () => {
   useEffect(() => {
     axios.get(`/api/project?id=${id}`).then((data) => {
       setProject(data.data.project);
+      setImage(data.data.project.main_image);
     });
   }, [id]);
 
@@ -57,7 +58,7 @@ const Project: React.FC = () => {
         {/* Main image */}
         <div className="[ h-[268px] sm:h-[560px] ] group overflow-hidden">
           <img
-            src={`http://localhost:4000/${image}`}
+            src={`http://localhost:5000/${image}`}
             alt="Project screenshot"
             className="
               w-full object-cover 
@@ -79,8 +80,10 @@ const Project: React.FC = () => {
         <h2 className="ml-12 heading">Project info</h2>
         <span className="ml-[90px] heading-border"></span>
         <p className="leading-6 [ mt-4 mb-6 ]">
-          {project.details}
-          {!project.details.endsWith(".") && "."}
+          <MDEditor.Markdown
+            source={project.details}
+            style={{ background: "transparent" }}
+          />
         </p>
         <Skills
           skills={project.skills}
