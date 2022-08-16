@@ -8,6 +8,7 @@ const AddProject = () => {
     register,
     handleSubmit,
     watch,
+    control,
     formState: { errors },
   } = useForm<IFormData>();
 
@@ -47,7 +48,13 @@ const AddProject = () => {
       >
         Add project
       </h1>
-      <AddProjectFormUI errors={errors} register={register} watch={watch} />;
+      <AddProjectFormUI
+        errors={errors}
+        register={register}
+        watch={watch}
+        control={control}
+      />
+      ;
     </form>
   );
 };

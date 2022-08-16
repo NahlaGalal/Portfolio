@@ -1,13 +1,15 @@
 import React from "react";
 import Input from "../../components/Input";
 import File from "../../components/Input/File";
-import Textarea from "../../components/Input/Textarea";
 import { IFormUIProps } from "./Types";
+import MDEditor from "@uiw/react-md-editor";
+import { Controller } from "react-hook-form";
 
 const AddProjectFormUI: React.FC<IFormUIProps> = ({
   register,
   errors,
   watch,
+  control,
 }) => {
   return (
     <>
@@ -19,16 +21,17 @@ const AddProjectFormUI: React.FC<IFormUIProps> = ({
         value={watch("name")}
         error={errors.name}
       />
-      <Textarea
-        type="text"
-        id="details"
-        label="Project details"
-        register={{
-          ...register("details", { required: "Prject details is required" }),
-        }}
-        value={watch("details")}
-        error={errors.details}
+      <Controller
+        control={control}
+        name="details"
+        render={({ field: { onChange, value } }) => (
+          <MDEditor value={value} onChange={onChange} />
+        )}
+        rules={{ required: "Project details is required"}}
       />
+      {errors.details && (
+        <p className="text-sm pl-2 text-red">{errors.details.message}</p>
+      )}
       <Input
         type="url"
         id="link"
@@ -74,9 +77,9 @@ const AddProjectFormUI: React.FC<IFormUIProps> = ({
         error={errors.backcolor}
       />
       <Input
-        type="date"
+        type="month"
         id="start_date"
-        label="Background color"
+        label="Start date"
         register={register("start_date", {
           required: "Start date is required",
         })}
@@ -84,9 +87,9 @@ const AddProjectFormUI: React.FC<IFormUIProps> = ({
         error={errors.start_date}
       />
       <Input
-        type="date"
+        type="month"
         id="end_date"
-        label="Background color"
+        label="End date"
         register={register("end_date", { required: "End date is required" })}
         value={watch("end_date") || new Date()}
         error={errors.end_date}
