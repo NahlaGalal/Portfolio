@@ -15,8 +15,8 @@ interface IProjects {
   backcolor?: string;
   text?: string;
   skills: ISkillsDoc["_id"][];
-  start_date: Date;
-  end_data: Date;
+  start_date: string;
+  end_data: string;
 }
 
 export interface IProjectsDoc extends IProjects, Document {}
