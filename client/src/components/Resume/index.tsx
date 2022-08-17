@@ -1,8 +1,20 @@
-import React from "react";
+import MDEditor from "@uiw/react-md-editor";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { HiOutlineAcademicCap } from "react-icons/hi";
-import { education, experience } from "./data";
+import { IExperience } from "./Types";
 
 const Resume = () => {
+  const [experience, setExperience] = useState<IExperience[]>([]);
+  const [education, setEducation] = useState<IExperience[]>([]);
+
+  useEffect(() => {
+    axios.get("api/experience").then((res) => {
+      setExperience(res.data.experience);
+      setEducation(res.data.education);
+    });
+  });
+
   return (
     <section className="flex flex-wrap w-full gap-4">
       <header className="w-full">
@@ -23,14 +35,23 @@ const Resume = () => {
         {education.map((elm) => (
           <div
             className="mt-4 text-darkGrey dark:text-lightGrey relative pl-9"
-            key={elm.id}
+            key={elm._id}
           >
             <span className="absolute w-4 h-4 top-1 left-[13px] bg-darkGreen dark:bg-lightGreen rounded-full"></span>
-            <p className="text-xl font-bold">{elm.companyName}</p>
-            {elm.jobType && <span className="mt-1 italic">{elm.jobType}</span>}
-            <p className="mt-4">{elm.description}</p>
+            <p className="text-xl font-bold">{elm.name}</p>
+            {elm.sub_name && (
+              <span className="mt-1 italic">{elm.sub_name}</span>
+            )}
+            {elm.description && (
+              <div className="mt-4">
+                <MDEditor.Markdown
+                  source={elm.description}
+                  style={{ background: "transparent" }}
+                />
+              </div>
+            )}
             <p className="absolute top-0 right-0 border border-darkGreen dark:border-lightGreen text-darkGreen dark:text-darkGreen rounded-3xl px-4 h-10 flex items-center">
-              {elm.startDate} - {elm.endDate}
+              {elm.start_date} - {elm.end_date}
             </p>
           </div>
         ))}
@@ -53,14 +74,23 @@ const Resume = () => {
         {experience.map((elm) => (
           <div
             className="mt-4 text-darkGrey dark:text-lightGrey relative pl-9"
-            key={elm.id}
+            key={elm._id}
           >
             <span className="absolute w-4 h-4 top-1 left-[13px] bg-darkGreen dark:bg-lightGreen rounded-full"></span>
-            <p className="text-xl font-bold">{elm.companyName}</p>
-            {elm.jobType && <span className="mt-1 italic">{elm.jobType}</span>}
-            <p className="mt-4">{elm.description}</p>
+            <p className="text-xl font-bold">{elm.name}</p>
+            {elm.sub_name && (
+              <span className="mt-1 italic">{elm.sub_name}</span>
+            )}
+            {elm.description && (
+              <div className="mt-4">
+                <MDEditor.Markdown
+                  source={elm.description}
+                  style={{ background: "transparent" }}
+                />
+              </div>
+            )}
             <p className="absolute top-0 right-0 border border-darkGreen dark:border-lightGreen text-darkGreen dark:text-darkGreen rounded-3xl px-4 h-10 flex items-center">
-              {elm.startDate} - {elm.endDate}
+              {elm.start_date} - {elm.end_date}
             </p>
           </div>
         ))}
