@@ -9,3 +9,12 @@ export interface IExperience {
   certificate?: string;
   type: string;
 }
+
+export interface IProps {
+  data: IExperience[];
+  type: string;
+}
+
+export interface IItem {
+  elm: IExperience;
+}
