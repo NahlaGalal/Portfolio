@@ -5,9 +5,16 @@ import { IProjectsDoc } from "../types";
 
 // Get all projects
 export const getAllProjects = (req: Request, res: Response) => {
-  Project.find({}, "name main_image backcolor")
-    .sort({ end_date: -1 })
-    .then((doc) => res.json([...doc]));
+  const { page = 1 } = req.query;
+
+  Project.count().then(async (count) => {
+    const pages: number = Math.ceil(count / 3);
+    const doc = await Project.find({}, "name main_image backcolor")
+      .sort({ end_date: -1 })
+      .limit(3)
+      .skip((+page - 1) * 3);
+    return res.json({ data: doc, pages });
+  });
 };
 
 // Get project
