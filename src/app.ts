@@ -42,7 +42,13 @@ app.use(
   ])
 );
 app.use("/data", express.static(path.join(__dirname, "data")));
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 app.use(router);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 
 mongoose
   .connect(MONGODB_URI)
