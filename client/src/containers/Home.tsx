@@ -12,7 +12,7 @@ const Home = () => {
 
   const getCurrentSection = () => {
     switch (section) {
-      case "Home":
+      case "About":
         return <About />;
       case "Resume":
         return <Resume />;

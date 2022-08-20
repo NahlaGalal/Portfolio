@@ -1,12 +1,16 @@
 import { BsFilePerson } from "react-icons/bs";
 import { RiFilePaper2Line, RiFileCodeLine } from "react-icons/ri";
 import { HiOutlineMail } from "react-icons/hi";
-import { AiOutlineSafetyCertificate } from "react-icons/ai";
+import { AiOutlineSafetyCertificate, AiOutlineHome } from "react-icons/ai";
 
 export const listItems = [
   {
-    Icon: BsFilePerson,
+    Icon: AiOutlineHome,
     text: "Home",
+  },
+  {
+    Icon: BsFilePerson,
+    text: "About",
   },
   {
     Icon: RiFilePaper2Line,
