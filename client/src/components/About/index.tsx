@@ -1,6 +1,5 @@
 import { BsTelephone, BsCloudDownload } from "react-icons/bs";
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
-import { FaHackerrank } from "react-icons/fa";
 import profile from "../../images/profile.jpg";
 import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
@@ -50,12 +49,6 @@ const About = () => {
             text="Cairo, Egypt"
             title="Address"
             Icon={HiOutlineLocationMarker}
-          />
-          <ListItem
-            text="@nahlaglal"
-            title="Hackerrank profile"
-            Icon={FaHackerrank}
-            href="https://www.hackerrank.com/nahlaglal?hr_r=1"
           />
         </div>
         <Link
