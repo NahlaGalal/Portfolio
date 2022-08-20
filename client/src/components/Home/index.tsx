@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
-import { BsCloudDownload } from "react-icons/bs";
+import { HiCloudDownload } from "react-icons/hi";
 import {FaHackerrank} from "react-icons/fa"
 import { Link } from "react-router-dom";
 import profile from "../../images/profile.jpg";
@@ -25,29 +25,26 @@ const HomeSection = () => {
         <a
           href={"https://www.linkedin.com/in/nahla-galal/"}
           title={"Linkedin profile"}
-          className="rounded-md bg-darkGreen h-8 w-8 [ flex justify-center items-center ]"
           target={"_blank"}
           rel="noreferrer"
         >
-          <AiFillLinkedin size={20} color="#EEEEEE" />
+          <AiFillLinkedin size={32} color="#006666" />
         </a>
         <a
           href={"https://github.com/NahlaGalal"}
           title={"Github profile"}
-          className="rounded-md bg-darkGreen h-8 w-8 [ flex justify-center items-center ]"
           target={"_blank"}
           rel="noreferrer"
         >
-          <AiFillGithub size={20} color="#EEEEEE" />
+          <AiFillGithub size={32} color="#006666" />
         </a>
         <a
           href={"https://www.hackerrank.com/nahlaglal?hr_r=1"}
           title={"Hacker rank profile profile"}
-          className="rounded-md bg-darkGreen h-8 w-8 [ flex justify-center items-center ]"
           target={"_blank"}
           rel="noreferrer"
         >
-          <FaHackerrank size={20} color="#EEEEEE" />
+          <FaHackerrank size={32} color="#006666" />
         </a>
       </div>
 
@@ -62,7 +59,7 @@ const HomeSection = () => {
             [ px-4 mt-8 ] 
             [ bg-darkGreen dark:bg-lightGreen ]"
       >
-        <BsCloudDownload size={24} color="#EEEEEE" />
+        <HiCloudDownload size={24} color="#EEEEEE" />
         Download CV
       </Link>
     </section>

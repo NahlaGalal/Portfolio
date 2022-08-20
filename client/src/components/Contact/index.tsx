@@ -1,7 +1,11 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
-import { BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
-import { AiFillTwitterCircle } from "react-icons/ai";
+import {
+  AiFillFacebook,
+  AiFillTwitterCircle,
+  AiFillLinkedin,
+  AiFillGithub,
+} from "react-icons/ai";
 import emailjs from "emailjs-com";
 import { IFormTypes } from "./Types";
 import ContactFormUI from "./FormUI";
@@ -56,8 +60,8 @@ const Contact = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <BsFacebook
-                size={32}
+              <AiFillFacebook
+                size={40}
                 title="Facebook profile link"
                 color="#006666"
               />
@@ -70,7 +74,7 @@ const Contact = () => {
               rel="noreferrer"
             >
               <AiFillTwitterCircle
-                size={32}
+                size={40}
                 title="Twitter profile link"
                 color="#006666"
               />
@@ -78,24 +82,28 @@ const Contact = () => {
           </li>
           <li className="mr-4">
             <a
-              href="https://www.linkedin.com/in/nahla-galal/"
+              href="https://github.com/NahlaGalal"
               target="_blank"
               rel="noreferrer"
             >
-              <BsLinkedin
-                size={32}
-                title="Linkedin profile link"
+              <AiFillGithub
+                size={40}
+                title="Github profile link"
                 color="#006666"
               />
             </a>
           </li>
           <li>
             <a
-              href="https://github.com/NahlaGalal"
+              href="https://www.linkedin.com/in/nahla-galal/"
               target="_blank"
               rel="noreferrer"
             >
-              <BsGithub size={32} title="Github profile link" color="#006666" />
+              <AiFillLinkedin
+                size={40}
+                title="Linkedin profile link"
+                color="#006666"
+              />
             </a>
           </li>
         </ul>

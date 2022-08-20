@@ -1,27 +1,25 @@
-import { BsFilePerson } from "react-icons/bs";
-import { RiFilePaper2Line, RiFileCodeLine } from "react-icons/ri";
-import { HiOutlineMail } from "react-icons/hi";
-import { AiOutlineHome } from "react-icons/ai";
+import { HiMail, HiHome } from "react-icons/hi";
+import { FaIdCardAlt, FaScroll, FaFileCode } from "react-icons/fa";
 
 export const listItems = [
   {
-    Icon: AiOutlineHome,
+    Icon: HiHome,
     text: "Home",
   },
   {
-    Icon: BsFilePerson,
+    Icon: FaIdCardAlt,
     text: "About",
   },
   {
-    Icon: RiFilePaper2Line,
+    Icon: FaScroll,
     text: "Resume",
   },
   {
-    Icon: RiFileCodeLine,
+    Icon: FaFileCode,
     text: "Projects",
   },
   {
-    Icon: HiOutlineMail,
+    Icon: HiMail,
     text: "Contact",
   },
 ];

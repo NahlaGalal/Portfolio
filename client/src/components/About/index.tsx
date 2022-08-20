@@ -1,5 +1,9 @@
-import { BsTelephone, BsCloudDownload } from "react-icons/bs";
-import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
+import {
+  HiMail,
+  HiLocationMarker,
+  HiPhone,
+  HiCloudDownload,
+} from "react-icons/hi";
 import profile from "../../images/profile.jpg";
 import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
@@ -38,17 +42,17 @@ const About = () => {
           learning, Proficient in HTML, CSS.
         </p>
         <div className="[ grid grid-cols-[32px_1fr] gap-2 items-center ] mt-10">
-          <ListItem text="01097429922" title="Phone" Icon={BsTelephone} />
+          <ListItem text="01097429922" title="Phone" Icon={HiPhone} />
           <ListItem
             text="nahlaglal@gmail.com"
             title="Email"
-            Icon={HiOutlineMail}
+            Icon={HiMail}
             href="mailto:nahlaglal@gmail.com"
           />
           <ListItem
             text="Cairo, Egypt"
             title="Address"
-            Icon={HiOutlineLocationMarker}
+            Icon={HiLocationMarker}
           />
         </div>
         <Link
@@ -61,7 +65,7 @@ const About = () => {
             [ px-4 ml-auto mt-8 ] 
             [ bg-darkGreen dark:bg-lightGreen ]"
         >
-          <BsCloudDownload size={24} color="#EEEEEE" />
+          <HiCloudDownload size={24} color="#EEEEEE" />
           Download CV
         </Link>
       </section>

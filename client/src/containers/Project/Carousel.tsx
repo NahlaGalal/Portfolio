@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+  HiArrowCircleLeft,
+  HiArrowCircleRight,
+} from "react-icons/hi";
 import { ICarousel } from "./Types";
 
 const Carousel: React.FC<ICarousel> = ({
@@ -18,7 +18,7 @@ const Carousel: React.FC<ICarousel> = ({
         onClick={generatePrevImage}
         className="bg-transparent border-0 cursor-pointer rounded-full p-0"
       >
-        <BsFillArrowLeftCircleFill title="Previous" size={24} />
+        <HiArrowCircleLeft title="Previous" size={32} />
       </button>
       <img
         onClick={() => setImageHandler(imageIndex)}
@@ -44,7 +44,7 @@ const Carousel: React.FC<ICarousel> = ({
         onClick={generateNextImage}
         className="bg-transparent border-0 cursor-pointer rounded-full p-0"
       >
-        <BsFillArrowRightCircleFill title="Next" size={24} />
+        <HiArrowCircleRight title="Next" size={32} />
       </button>
     </div>
   );
