@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { addExperience, getAllExperience } from "./controllers/experience";
 import { getAllProjects, getProject, addProject } from "./controllers/projects";
-import { addSkill } from "./controllers/skills";
+import { addSkill, getSkills } from "./controllers/skills";
 
 const router = Router();
 
@@ -14,6 +14,8 @@ router.post("/api/project", addProject);
 router.get("/api/experience", getAllExperience);
 
 router.post("/api/experience", addExperience);
+
+router.get("/api/skill", getSkills);
 
 router.post("/api/skill", addSkill);
 
