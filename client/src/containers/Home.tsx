@@ -11,28 +11,55 @@ const Home = () => {
 
   const onChangeSecHandler = (sec: string) => setSection(sec);
 
-  const getCurrentSection = () => {
-    switch (section) {
-      case "Home":
-        return <HomeSection />;
-      case "About":
-        return <About />;
-      case "Resume":
-        return <Resume />;
-      case "Projects":
-        return <Projects />;
-      case "Contact":
-        return <Contact />;
-      default:
-        return <></>;
-    }
-  };
-
   return (
     <>
       <Sidebar onClick={onChangeSecHandler} />
-      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] w-full ]">
-        {getCurrentSection()}
+      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] w-full ] flex">
+        <div
+          className={
+            section === "Home"
+              ? "w-full transition-all duration-300"
+              : "transition-all duration-300 w-0 h-0 overflow-hidden"
+          }
+        >
+          <HomeSection />
+        </div>
+        <div
+          className={
+            section === "About"
+              ? "w-full transition-all duration-300"
+              : "transition-all duration-300 w-0 h-0 overflow-hidden"
+          }
+        >
+          <About />
+        </div>
+        <div
+          className={
+            section === "Resume"
+              ? "w-full transition-all duration-300"
+              : "transition-all duration-300 w-0 h-0 overflow-hidden"
+          }
+        >
+          <Resume />
+        </div>
+        <div
+          className={
+            section === "Projects"
+              ? "w-full transition-all duration-300"
+              : "transition-all duration-300 w-0 h-0 overflow-hidden"
+          }
+        >
+          <Projects />
+        </div>
+        <div
+          className={
+            section === "Contact"
+              ? "w-full transition-all duration-300"
+              : "transition-all duration-300 w-0 h-0 overflow-hidden"
+          }
+        >
+          <Contact />
+        </div>
       </main>
     </>
   );
