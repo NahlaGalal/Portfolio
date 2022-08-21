@@ -6,7 +6,7 @@ const Sidebar: React.FC<IProps> = ({ onClick }) => {
   return (
     <aside
       className="
-        [ bg-darkGreen dark:bg-lightGreen ]
+        [ bg-darkGreen ]
         [ w-20 sm:w-28 py-20 ]
         relative"
     >
@@ -17,7 +17,7 @@ const Sidebar: React.FC<IProps> = ({ onClick }) => {
               <button
                 className="
                 [ flex flex-col justify-center items-center ]
-                [ text-lightGrey dark:text-lightGrey ]"
+                [ text-lightGrey ]"
                 onClick={() => onClick(text)}
               >
                 <Icon size={32} color="#EEEEEE" />

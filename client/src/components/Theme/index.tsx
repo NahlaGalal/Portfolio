@@ -7,7 +7,7 @@ const SwitchTheme: React.FC<ITheme> = ({ theme, setTheme }) => {
 
   return (
     <button
-      className="[ absolute top-10 right-0 ] [ bg-darkGreen ] p-4 rounded-l-md"
+      className="[ fixed top-10 right-0 ] [ bg-darkGreen ] p-4 rounded-l-md z-50"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Icon size={24} color="#EEE" />

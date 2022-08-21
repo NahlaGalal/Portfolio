@@ -65,7 +65,10 @@ const About = () => {
             [ px-4 ml-auto mt-8 ] 
             [ bg-darkGreen dark:bg-lightGreen ]"
         >
-          <HiCloudDownload size={24} color="#EEEEEE" />
+          <HiCloudDownload
+            size={24}
+            className="text-lightGrey dark:text-darkGrey"
+          />
           Download CV
         </Link>
       </section>

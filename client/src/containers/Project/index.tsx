@@ -77,12 +77,13 @@ const Project: React.FC = () => {
         />
       </section>
       <section>
-        <h2 className="ml-12 heading">Project info</h2>
+        <h2 className="ml-12 heading text-3xl after:-right-10 before:-left-10">Project info</h2>
         <span className="ml-[90px] heading-border"></span>
         <div className="leading-6 [ mt-4 mb-6 ]">
           <MDEditor.Markdown
             source={project.details}
             style={{ background: "transparent" }}
+            className="text-darkGrey dark:text-lightGrey"
           />
         </div>
         <Skills

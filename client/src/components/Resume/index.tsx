@@ -42,7 +42,11 @@ const Resume = () => {
         <ul className="flex flex-wrap gap-4 w-8/12 mx-auto justify-center">
           {skills.map(({ _id, name }) => (
             <li
-              className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium"
+              className="
+              [ bg-darkGrey dark:bg-lightGrey ] 
+              [ text-lightGrey dark:text-darkGrey ] 
+              [ px-4 py-2 ]
+              rounded-lg font-medium"
               key={_id}
             >
               {name}

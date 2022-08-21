@@ -9,7 +9,7 @@ const HomeSection = () => {
   return (
     <section className="flex flex-col justify-center items-center">
       {/* Avatar */}
-      <div className="[ border-4 border-lightGreen ] [ w-max ] rounded-full mb-4">
+      <div className="[ border-4 border-darkGrey dark:border-lightGrey ] [ w-max ] rounded-full mb-4">
         <img
           src={profile}
           alt="Nahla personal avatar"
@@ -17,8 +17,12 @@ const HomeSection = () => {
         />
       </div>
 
-      <h1 className="text-center text-4xl sm:text-6xl font-bold text-darkGreen mb-3">Nahla Galal</h1>
-      <p className="text-center text-lg sm:text-2xl text-darkGrey">Front-end developer</p>
+      <h1 className="text-center text-4xl sm:text-6xl font-bold [ text-darkGreen dark:text-lightGreen ]  mb-3">
+        Nahla Galal
+      </h1>
+      <p className="text-center text-lg sm:text-2xl [ text-darkGrey dark:text-lightGrey ]">
+        Front-end developer
+      </p>
 
       {/* Social icons */}
       <div className="flex gap-4 mt-5">
@@ -28,7 +32,10 @@ const HomeSection = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          <AiFillLinkedin size={32} color="#006666" />
+          <AiFillLinkedin
+            size={32}
+            className="text-darkGreen dark:text-lightGreen"
+          />
         </a>
         <a
           href={"https://github.com/NahlaGalal"}
@@ -36,7 +43,10 @@ const HomeSection = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          <AiFillGithub size={32} color="#006666" />
+          <AiFillGithub
+            size={32}
+            className="text-darkGreen dark:text-lightGreen"
+          />
         </a>
         <a
           href={"https://www.hackerrank.com/nahlaglal?hr_r=1"}
@@ -44,7 +54,10 @@ const HomeSection = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          <FaHackerrank size={32} color="#006666" />
+          <FaHackerrank
+            size={32}
+            className="text-darkGreen dark:text-lightGreen"
+          />
         </a>
       </div>
 
@@ -59,7 +72,10 @@ const HomeSection = () => {
             [ px-4 mt-8 ] 
             [ bg-darkGreen dark:bg-lightGreen ]"
       >
-        <HiCloudDownload size={24} color="#EEEEEE" />
+        <HiCloudDownload
+          size={24}
+          className="text-lightGrey dark:text-darkGrey"
+        />
         Download CV
       </Link>
     </section>

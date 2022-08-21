@@ -20,7 +20,7 @@ const Item: React.FC<IItem> = ({ elm }) => {
           {elm.sub_name && <span className="mt-1 italic">{elm.sub_name}</span>}
         </div>
 
-        <p className="border border-darkGreen dark:border-lightGreen text-darkGreen dark:text-darkGreen rounded-3xl px-4 h-10 flex items-center ml-auto text-sm sm:text-base">
+        <p className="border border-darkGreen dark:border-lightGreen text-darkGreen dark:text-lightGreen rounded-3xl px-4 h-10 flex items-center ml-auto text-sm sm:text-base">
           {formatDate(elm.start_date)} - {formatDate(elm.end_date)}
         </p>
       </div>
@@ -30,6 +30,7 @@ const Item: React.FC<IItem> = ({ elm }) => {
           <MDEditor.Markdown
             source={elm.description}
             style={{ background: "transparent" }}
+            className="text-darkGrey dark:text-lightGrey"
           />
         </div>
       )}

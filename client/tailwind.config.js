@@ -7,10 +7,10 @@ module.exports = {
     },
     colors: {
       darkGreen: "#006666",
-      lightGreen: "#9DBCBC",
+      lightGreen: "#CCFFFF",
       lightGrey: "#EEEEEE",
       darkGrey: "#6B6B6B",
-      red: "#f00"
+      red: "#f00",
     },
     extend: {
       backgroundImage: {
