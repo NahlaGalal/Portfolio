@@ -10,14 +10,10 @@ const Projects = () => {
   const [pages, setPages] = useState<number>(0);
 
   useEffect(() => {
-    axios.get("api").then((res) => {
+    axios.get(`api?page=${page}`).then((res) => {
       setProjects(res.data.data);
       setPages(res.data.pages);
     });
-  }, [setProjects]);
-
-  useEffect(() => {
-    axios.get(`api?page=${page}`).then((res) => setProjects(res.data.data));
   }, [page]);
 
   return (

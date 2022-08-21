@@ -1,18 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Experience from "./Experience";
-import { IExperience } from "./Types";
+import { IExperience, ISkill } from "./Types";
 
 const Resume = () => {
   const [experience, setExperience] = useState<IExperience[]>([]);
   const [education, setEducation] = useState<IExperience[]>([]);
+  const [skills, setSkills] = useState<ISkill[]>([]);
 
   useEffect(() => {
     axios.get("api/experience").then((res) => {
       setExperience(res.data.experience);
       setEducation(res.data.education);
+      setSkills(res.data.skills);
     });
-  });
+  }, []);
 
   return (
     <>
@@ -38,19 +40,14 @@ const Resume = () => {
         </header>
 
         <ul className="flex flex-wrap gap-4 w-8/12 mx-auto justify-center">
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">HTML</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">CSS</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">Javascript</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">JQuery</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">SASS</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">reactJs</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">Typescipt</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">Redux</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">Git</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">React native</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">Figma</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">NextJs</li>
-          <li className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium">TailwindCSS</li>
+          {skills.map(({ _id, name }) => (
+            <li
+              className="bg-darkGrey text-lightGrey px-4 py-2 rounded-lg font-medium"
+              key={_id}
+            >
+              {name}
+            </li>
+          ))}
         </ul>
       </section>
     </>
