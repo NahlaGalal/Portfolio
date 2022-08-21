@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import mongoose from "mongoose";
 import Project from "../models/Projects";
 import Skill from "../models/Skills";
 import { IProjectsDoc } from "../types";
@@ -36,28 +37,16 @@ export const getProject = (req: Request, res: Response) => {
 // Add a project
 export const addProject = (req: Request, res: Response) => {
   const projectData = req.body;
-  const { skills_images, main_image, images } = req.files as {
+  const { main_image, images } = req.files as {
     [fieldname: string]: Express.Multer.File[];
   };
 
   (async () => {
-    let promises = skills_images.map(async (skill) => {
-      const name = skill.originalname.slice(0, -4);
-      let res = await Skill.findOne({ name });
-      if (res) return res._id;
-      else {
-        let newSkill = await new Skill({
-          name,
-          image: `data/${skill.filename}`,
-        }).save();
-        return newSkill._id;
-      }
-    });
-    const skillsIds = await Promise.all(promises);
-
     await new Project({
       ...projectData,
-      skills: skillsIds,
+      skills: projectData.skills?.map(
+        (skill: string) => new mongoose.Types.ObjectId(skill)
+      ),
       main_image: `data/${main_image[0].filename}`,
       images: [
         `data/${main_image[0].filename}`,

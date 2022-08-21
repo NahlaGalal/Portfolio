@@ -38,11 +38,10 @@ app.use(
   multer({ storage }).fields([
     { name: "main_image", maxCount: 1 },
     { name: "images" },
-    { name: "skills_images" },
   ])
 );
 app.use("/data", express.static(path.join(__dirname, "data")));
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use(router);
 
