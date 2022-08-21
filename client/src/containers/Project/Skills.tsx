@@ -10,7 +10,7 @@ const Skills: React.FC<ISkills> = ({ skills, text, code, link }) => {
         {skills.map((skill) => (
           <li key={skill.name} className="mr-6 last-of-type:mr-0">
             <img
-              src={`${window.location.origin}/${skill.image}`}
+              src={`/${skill.image}`}
               alt={skill.name}
               title={skill.name}
               className="w-20 h-20"

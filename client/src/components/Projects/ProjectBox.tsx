@@ -10,7 +10,7 @@ const ProjectBox: React.FC<IProjectBox> = ({ project }) => {
         style={{ backgroundColor: project.backcolor }}
       >
         <img
-          src={`${window.location.origin}/${project.main_image}`}
+          src={`/${project.main_image}`}
           alt={`${project.name} page screenshot`}
           className="w-full object-cover transition-all duration-[1.5s] group-hover:translate-y-[calc(-100%+389px)]"
         />
