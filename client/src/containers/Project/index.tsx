@@ -58,7 +58,7 @@ const Project: React.FC = () => {
         {/* Main image */}
         <div className="[ h-[268px] sm:h-[560px] ] group overflow-hidden">
           <img
-            src={`http://localhost:5000/${image}`}
+            src={`${window.location.origin}/${image}`}
             alt="Project screenshot"
             className="
               w-full object-cover 
