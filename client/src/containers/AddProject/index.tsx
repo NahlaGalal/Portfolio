@@ -1,9 +1,12 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import AddProjectFormUI from "./FormUI";
-import { IFormData } from "./Types";
+import { IFormData, ISkill } from "./Types";
 
 const AddProject = () => {
+  const [skills, setSkills] = useState<ISkill[]>([]);
+
   const {
     register,
     handleSubmit,
@@ -12,18 +15,22 @@ const AddProject = () => {
     formState: { errors },
   } = useForm<IFormData>();
 
+  // Get skills
+  useEffect(() => {
+    axios.get("api/skill").then((res) => setSkills(res.data.skills));
+  }, []);
+
   const onSubmitHandler = (values: IFormData) => {
     const data = {
       ...values,
       main_image: values.main_image[0],
       images: Array.from(values.images),
-      skills_images: Array.from(values.skills_images),
     };
 
     const formData = new FormData();
     Object.entries(data).forEach(([key, value]: [string, any]) => {
-      if (key === "images" || key === "skills_images") {
-        value.forEach((val: File) => {
+      if (key === "images" || key === "skills") {
+        value.forEach((val: File | string) => {
           formData.append(key, val);
         });
       } else {
@@ -53,6 +60,7 @@ const AddProject = () => {
         register={register}
         watch={watch}
         control={control}
+        skills={skills}
       />
       ;
     </form>

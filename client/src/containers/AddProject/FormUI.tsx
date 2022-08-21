@@ -4,12 +4,14 @@ import File from "../../components/Input/File";
 import { IFormUIProps } from "./Types";
 import MDEditor from "@uiw/react-md-editor";
 import { Controller } from "react-hook-form";
+import Select from "../../components/Input/Select";
 
 const AddProjectFormUI: React.FC<IFormUIProps> = ({
   register,
   errors,
   watch,
   control,
+  skills,
 }) => {
   return (
     <>
@@ -27,7 +29,7 @@ const AddProjectFormUI: React.FC<IFormUIProps> = ({
         render={({ field: { onChange, value } }) => (
           <MDEditor value={value} onChange={onChange} />
         )}
-        rules={{ required: "Project details is required"}}
+        rules={{ required: "Project details is required" }}
       />
       {errors.details && (
         <p className="text-sm pl-2 text-red">{errors.details.message}</p>
@@ -111,14 +113,13 @@ const AddProjectFormUI: React.FC<IFormUIProps> = ({
         error={errors.images}
         multiple
       />
-      <File
-        type="file"
+      <Select
+        register={register("skills", { required: "Skills are required" })}
+        error={errors.skills}
         id="skills"
-        label="Skills"
-        register={register("skills_images", {
-          required: "Skills is required",
-        })}
-        error={errors.skills_images}
+        label="Select skills"
+        options={skills}
+        type=""
         multiple
       />
 

@@ -8,7 +8,7 @@ import {
 export interface IFormData {
   main_image: FileList;
   images: FileList;
-  skills_images: FileList;
+  skills: string[];
   name: string;
   details: string;
   link?: string;
@@ -24,4 +24,10 @@ export interface IFormUIProps {
   watch: UseFormWatch<IFormData>;
   errors: FieldErrorsImpl<IFormData>;
   control: Control<IFormData, any>;
+  skills: ISkill[];
+}
+
+export interface ISkill {
+  _id: string;
+  name: string;
 }
