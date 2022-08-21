@@ -12,9 +12,9 @@ const Home = () => {
   const onChangeSecHandler = (sec: string) => setSection(sec);
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full min-h-screen">
       <Sidebar onClick={onChangeSecHandler} />
-      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] w-full ] flex flex-1">
+      <main className="[ px-[5%] sm:px-[10%] my-10 ] flex flex-1">
         <div
           className={
             section === "Home"

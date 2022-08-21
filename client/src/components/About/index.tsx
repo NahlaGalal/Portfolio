@@ -10,25 +10,25 @@ import ListItem from "./ListItem";
 
 const About = () => {
   return (
-    <section className="[ flex flex-col justify-center items-center sm:flex-row-reverse sm:gap-x-20 ]">
+    <section className="[ flex flex-col justify-center items-center gap-10 md:flex-row-reverse md:gap-x-20 ]">
       {/* Avatar */}
       <div
         className="
-        [ w-72 h-64 sm:w-full sm:h-[100px] lg:h-[553px] lg:min-w-[530px] lg:w-[530px] ] 
+        [ w-72 h-64 md:w-full md:h-[400px] xl:h-[553px] xl:w-1/2 ] 
         [ overflow-visible rounded-3xl ] 
-        [ p-4 mx-auto sm:m-0 sm:p-8 lg:p-10 ] 
+        [ p-4 mx-auto md:m-0 md:p-6 ] 
         [ transition-all duration-500 ] 
         [ bg-darkGrey dark:bg-lightGrey ]"
       >
         <img
           src={profile}
           alt="Nahla personal avatar"
-          className="[ h-64 w-64 sm:w-full sm:h-[400px] lg:w-[450px] lg:h-[553px] ] object-cover rounded-3xl"
+          className="[ h-64 w-64 md:w-full md:h-[400px] xl:w-full xl:h-[553px] ] object-cover rounded-3xl"
         />
       </div>
 
       {/* Info */}
-      <section>
+      <section className="flex-1">
         <h1 className="text-5xl font-bold [ text-darkGreen dark:text-lightGreen ]">
           Hello,
         </h1>

@@ -33,25 +33,22 @@ const Contact = () => {
   };
 
   return (
-    <section className="sm:grid sm:grid-cols-[1fr_1fr] gap-x-10 items-center">
+    <section className="md:grid md:grid-cols-[1fr_1fr] gap-x-10 items-center">
       <h2 className="heading col-[1/3]">Contact us</h2>
       <span className="heading-border col-[1/3]"></span>
-      <form onSubmit={handleSubmit(onSubmitHandler)} ref={form}>
-        <ContactFormUI register={register} watch={watch} errors={errors} />
-      </form>
       <div
         className="
-        mt-8 sm:h-full
-        [ sm:col-[1/2] sm:row-[3/4] ]
-        [ sm:bg-cover sm:bg-lightGrey sm:bg-blend-overlay bg-contact_background ]"
+        mt-8 md:h-full p-4
+        [ md:col-[1/2] md:row-[3/4] ]
+        [ bg-cover bg-lightGrey bg-blend-overlay bg-contact_background ]"
       >
         <h3
           className="
           [ text-2xl text-center leading-7 ]
-          text-darkGrey sm:max-w-[273px] 
-          [ sm:mt-20 sm:mx-auto sm:mb-14 ]"
+          text-darkGrey md:max-w-[273px] 
+          [ md:mt-20 md:mx-auto md:mb-14 ]"
         >
-          OR you can follow me on social media accounts
+          You can follow me on social media accounts
         </h3>
         <ul className="[ flex justify-center items-center ] mt-6">
           <li className="mr-4">
@@ -108,6 +105,9 @@ const Contact = () => {
           </li>
         </ul>
       </div>
+      <form onSubmit={handleSubmit(onSubmitHandler)} ref={form}>
+        <ContactFormUI register={register} watch={watch} errors={errors} />
+      </form>
     </section>
   );
 };

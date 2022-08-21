@@ -17,7 +17,7 @@ const Projects = () => {
   }, [page]);
 
   return (
-    <section className="sm:grid sm:grid-cols-[repeat(3,_1fr)] sm:gap-x-10">
+    <section className="md:grid md:grid-cols-[repeat(3,_1fr)] md:gap-x-10">
       <h2 className="heading sm:col-[1/4]">My Projects</h2>
       <span className="heading-border sm:col-[1/4]"></span>
 

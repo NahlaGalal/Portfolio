@@ -13,12 +13,12 @@ const HomeSection = () => {
         <img
           src={profile}
           alt="Nahla personal avatar"
-          className="[ h-32 w-32 sm:w-full sm:h-[400px] lg:w-64 lg:h-64 ] object-cover rounded-full"
+          className="[ h-32 w-32 sm:w-64 sm:h-64 ] object-cover rounded-full"
         />
       </div>
 
-      <h1 className="text-6xl font-bold text-darkGreen mb-3">Nahla Galal</h1>
-      <p className="text-2xl text-darkGrey">Front-end developer</p>
+      <h1 className="text-center text-4xl sm:text-6xl font-bold text-darkGreen mb-3">Nahla Galal</h1>
+      <p className="text-center text-lg sm:text-2xl text-darkGrey">Front-end developer</p>
 
       {/* Social icons */}
       <div className="flex gap-4 mt-5">
