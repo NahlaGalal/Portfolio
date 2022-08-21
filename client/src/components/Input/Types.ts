@@ -12,3 +12,8 @@ export interface IProps {
 export interface IFile extends IProps {
   multiple?: boolean;
 }
+
+export interface ISelect extends IProps {
+  options: { _id: string; name: string }[];
+  multiple?: boolean;
+}
