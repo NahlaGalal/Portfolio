@@ -8,7 +8,7 @@ import Project from "./Project";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<Project />} />

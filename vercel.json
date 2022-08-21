@@ -2,14 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "./app.ts",
+      "src": "./src/app.ts",
       "use": "@vercel/node"
+    },
+    {
+      "src": "./client/build",
+      "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "source": "/(.*)",
+      "destination": "/src/app.ts"
     }
   ]
 }

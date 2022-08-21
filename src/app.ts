@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import multer from "multer";
 import path from "path";
+import { hostname } from "os";
 import { DestinationCallback } from "./types";
 import router from "./routes";
 
