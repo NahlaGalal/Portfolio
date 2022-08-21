@@ -12,9 +12,9 @@ const Home = () => {
   const onChangeSecHandler = (sec: string) => setSection(sec);
 
   return (
-    <>
+    <div className="flex w-full">
       <Sidebar onClick={onChangeSecHandler} />
-      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] w-full ] flex">
+      <main className="[ px-[5%] sm:px-[10%] my-10 ] [ min-h-[calc(100vh-80px)] w-full ] flex flex-1">
         <div
           className={
             section === "Home"
@@ -61,7 +61,7 @@ const Home = () => {
           <Contact />
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
