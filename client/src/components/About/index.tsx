@@ -14,7 +14,7 @@ const About = () => {
       {/* Avatar */}
       <div
         className="
-        [ w-72 h-64 md:w-full md:h-[400px] xl:h-[553px] xl:w-1/2 ] 
+        [ w-40 h-40 sm:w-64 sm:h-64 md:w-full md:h-[400px] xl:h-[553px] xl:w-1/2 ] 
         [ overflow-visible rounded-3xl ] 
         [ p-4 mx-auto md:m-0 md:p-6 ] 
         [ transition-all duration-500 ] 
@@ -23,7 +23,7 @@ const About = () => {
         <img
           src={profile}
           alt="Nahla personal avatar"
-          className="[ h-64 w-64 md:w-full md:h-[400px] xl:w-full xl:h-[553px] ] object-cover rounded-3xl"
+          className="[ w-40 h-40 sm:h-64 sm:w-64 md:w-full md:h-[400px] xl:w-full xl:h-[553px] ] object-cover rounded-3xl"
         />
       </div>
 

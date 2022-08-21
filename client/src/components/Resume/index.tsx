@@ -21,7 +21,7 @@ const Resume = () => {
       {/* Education and experience */}
       <section className="flex flex-wrap w-full gap-4">
         <header className="w-full">
-          <h2 className="heading text-center">Education & Experience</h2>
+          <h2 className="heading text-center w-9/12 sm:w-max">Education & Experience</h2>
           <span className="heading-border"></span>
         </header>
 

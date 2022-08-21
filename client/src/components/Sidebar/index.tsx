@@ -7,7 +7,7 @@ const Sidebar: React.FC<IProps> = ({ onClick }) => {
     <aside
       className="
         [ bg-darkGreen dark:bg-lightGreen ]
-        [ w-28 py-20 ]
+        [ w-20 sm:w-28 py-20 ]
         relative"
     >
       <nav className="sticky top-10">

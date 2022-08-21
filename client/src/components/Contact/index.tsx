@@ -50,7 +50,7 @@ const Contact = () => {
         >
           You can follow me on social media accounts
         </h3>
-        <ul className="[ flex justify-center items-center ] mt-6">
+        <ul className="[ flex justify-center items-center flex-wrap ] mt-6">
           <li className="mr-4">
             <a
               href="https://www.facebook.com/NhlaaGalal/"
