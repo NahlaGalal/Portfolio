@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import HomeSection from "../components/Home";
@@ -7,7 +8,11 @@ import Resume from "../components/Resume";
 import Sidebar from "../components/Sidebar";
 
 const Home = () => {
-  const [section, setSection] = useState<string>("Home");
+  const location = useLocation();
+
+  const [section, setSection] = useState<string>(
+    location.state ? (location.state as { current: string }).current : "Home"
+  );
 
   const onChangeSecHandler = (sec: string) => setSection(sec);
 
