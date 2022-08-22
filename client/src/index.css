@@ -10,9 +10,9 @@
   }
 
   #root {
-    @apply flex items-center min-h-screen
+    @apply flex items-center min-h-screen;
   }
-  
+
   a {
     text-decoration: none;
   }
@@ -21,8 +21,7 @@
 @layer components {
   /* Heading */
   .heading {
-    @apply 
-      relative 
+    @apply relative 
       text-xl sm:text-3xl font-bold text-center 
       flex items-center 
       w-max mx-auto 
@@ -34,25 +33,25 @@
       after:border-[3px] before:border-[3px]
       after:border-solid before:border-solid 
       before:border-darkGreen dark:before:border-lightGreen 
-      after:border-darkGreen dark:after:border-lightGreen
+      after:border-darkGreen dark:after:border-lightGreen;
   }
 
   .heading-border {
-    @apply block w-20 h-1 mx-auto mt-2 rounded-3xl bg-darkGreen dark:bg-lightGreen
+    @apply block w-20 h-1 mx-auto mt-2 rounded-3xl bg-darkGreen dark:bg-lightGreen;
   }
 
   /* Button */
   .btn {
-    @apply h-10 rounded-xl block text-base relative overflow-hidden cursor-pointer bg-darkGrey dark:bg-lightGrey text-lightGrey dark:text-darkGrey
+    @apply h-10 rounded-xl block text-base relative overflow-hidden cursor-pointer bg-darkGrey dark:bg-lightGrey text-lightGrey dark:text-darkGrey;
   }
 
   .btn span {
     right: -200px;
-    @apply absolute top-0 w-full h-full flex items-center justify-center custom-transition
+    @apply absolute top-0 w-full h-full flex items-center justify-center custom-transition;
   }
 
   .btn:hover span {
-    @apply right-0 rounded-xl bg-darkGreen dark:bg-lightGreen
+    @apply right-0 rounded-xl bg-darkGreen dark:bg-lightGreen;
   }
 }
 
@@ -62,5 +61,17 @@
   }
   .custom-transition {
     transition: all 0.4s ease-in-out;
+  }
+
+  .mde ul {
+    list-style-type: inherit;
+  }
+
+  .mde ol {
+    list-style-type: auto;
+  }
+
+  .mde a {
+    @apply text-darkGreen dark:text-lightGreen
   }
 }

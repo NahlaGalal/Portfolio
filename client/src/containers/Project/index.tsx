@@ -79,7 +79,7 @@ const Project: React.FC = () => {
       <section>
         <h2 className="ml-12 heading text-3xl after:-right-10 before:-left-10">Project info</h2>
         <span className="ml-[90px] heading-border"></span>
-        <div className="leading-6 [ mt-4 mb-6 ]">
+        <div className="leading-6 [ mt-4 mb-6 ] mde">
           <MDEditor.Markdown
             source={project.details}
             style={{ background: "transparent" }}

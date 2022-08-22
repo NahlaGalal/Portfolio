@@ -26,7 +26,7 @@ const Item: React.FC<IItem> = ({ elm }) => {
       </div>
 
       {elm.description && (
-        <div className="mt-4">
+        <div className="mt-4 mde">
           <MDEditor.Markdown
             source={elm.description}
             style={{ background: "transparent" }}
