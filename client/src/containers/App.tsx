@@ -29,7 +29,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<Project />} />
 
-        {/* Routes for adding data */}
+        {/* Routes for adding data  */}
         {/* <Route path="/add-project" element={<AddProject />} /> */}
         {/* <Route path="/add-experience" element={<AddExperience />} /> */}
         {/* <Route path="/add-skill" element={<AddSkill />} /> */}
