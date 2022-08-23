@@ -1,10 +1,11 @@
-My portfolio
+# My portfolio
+
 This is my portfolio showing my projects and my personal information
 
-Run the project
-You can show a live preview at
+## Run the project
+You can show a live preview at http://nahla-portfolio.vercel.app/
 
-To run the project locally:
+### To run the project locally:
 
 - Add .env file
 - Copy .env.example to .env
