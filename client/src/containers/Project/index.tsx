@@ -16,8 +16,8 @@ const Project: React.FC = () => {
     details: "",
     text: "",
     skills: [],
-    start_date: new Date(),
-    end_date: new Date(),
+    start_date: "",
+    end_date: "",
   });
   const [imageIndex, setImageIndex] = useState<number>(0);
   const [image, setImage] = useState<string>(project.main_image);
@@ -45,8 +45,12 @@ const Project: React.FC = () => {
     setImage(project.images[index]);
   };
 
+  const formatDate = (date: string) => {
+    return date.split("-").reverse().join("/");
+  }
+
   return project._id ? (
-    <main className="px-[5%] sm:px-[10%] sm:grid sm:grid-cols-[repeat(2,_1fr)] sm:gap-10">
+    <main className="px-[5%] sm:px-[10%] sm:grid sm:grid-cols-[repeat(2,_1fr)] gap-x-10">
       <Link
         to="/"
         className="text-darkGreen dark:text-lightGrey mt-10 flex gap-2 items-center underline font-semibold"
@@ -57,12 +61,17 @@ const Project: React.FC = () => {
       </Link>
       <h1
         className="
-          mt-2 mb-6 sm:col-[1/3] 
+          my-2 sm:col-[1/3] 
           [ text-center text-5xl font-bold ] 
           [ text-darkGreen dark:text-lightGreen ]"
       >
         {project.name}
       </h1>
+      <p className="mb-10 sm:col-[1/3] text-center">
+        <>
+          {formatDate(project.start_date)} - {formatDate(project.end_date)}
+        </>
+      </p>
       <section className="mb-10">
         {/* Main image */}
         <div className="[ h-[268px] sm:h-[560px] ] group overflow-hidden">

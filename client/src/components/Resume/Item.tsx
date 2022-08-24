@@ -4,10 +4,8 @@ import { IItem } from "./Types";
 
 const Item: React.FC<IItem> = ({ elm }) => {
   const formatDate = (date: string) => {
-    if (date.includes("-")) {
-      let arr = date.split("-");
-      return `${arr[1]}/${arr[0]}`;
-    } else return date;
+    if (date.includes("-")) return date.split("-").reverse().join("/");
+    else return date;
   };
 
   return (

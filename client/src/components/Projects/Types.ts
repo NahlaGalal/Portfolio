@@ -12,8 +12,8 @@ export interface IProject {
     name: string;
     image: string;
   }[];
-  start_date: Date;
-  end_date: Date;
+  start_date: string;
+  end_date: string;
 }
 
 export interface IPaging {
