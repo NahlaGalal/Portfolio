@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import multer from "multer";
 import path from "path";
-import { hostname } from "os";
 import { DestinationCallback } from "./types";
 import router from "./routes";
 
@@ -50,6 +49,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
+mongoose.set("strictQuery", false);
 mongoose
   .connect(MONGODB_URI)
   .then(() => console.log("Connected"))
