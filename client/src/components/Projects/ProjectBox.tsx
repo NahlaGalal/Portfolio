@@ -4,7 +4,7 @@ import { IProjectBox } from "./Types";
 
 const ProjectBox: React.FC<IProjectBox> = ({ project }) => {
   return (
-    <figure className="my-6 w-full">
+    <figure className="my-6 w-full flex flex-col justify-center">
       <div
         className="h-[389px] overflow-hidden group"
         style={{ backgroundColor: project.backcolor }}

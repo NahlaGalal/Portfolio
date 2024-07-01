@@ -33,12 +33,12 @@ const Contact = () => {
   };
 
   return (
-    <section className="md:grid md:grid-cols-[1fr_1fr] gap-x-10 items-center">
+    <section className="md:grid md:grid-cols-[1fr_1fr] md:grid-rows-[auto_auto_1fr] h-full gap-x-10 items-center">
       <h2 className="heading col-[1/3]">Contact us</h2>
       <span className="heading-border col-[1/3]"></span>
       <div
         className="
-        mt-8 md:h-full p-4
+        mt-8 md:h-[400px] p-4
         [ md:col-[1/2] md:row-[3/4] ]
         [ bg-cover bg-lightGrey bg-blend-overlay bg-contact_background ]"
       >

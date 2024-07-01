@@ -10,11 +10,10 @@ import ListItem from "./ListItem";
 
 const About = () => {
   return (
-    <section className="[ flex flex-col justify-center items-center gap-10 md:flex-row-reverse md:gap-x-20 ]">
+    <section className="[ flex flex-col justify-center items-center gap-10 md:flex-row-reverse md:gap-x-20 ] h-full">
       {/* Avatar */}
       <div
         className="
-        [ w-40 h-40 sm:w-64 sm:h-64 md:w-full md:h-[400px] xl:h-[553px] xl:w-1/2 ] 
         [ overflow-visible rounded-3xl ] 
         [ p-4 mx-auto md:m-0 md:p-6 ] 
         [ transition-all duration-500 ] 
@@ -23,7 +22,7 @@ const About = () => {
         <img
           src={profile}
           alt="Nahla personal avatar"
-          className="[ w-40 h-40 sm:h-64 sm:w-64 md:w-full md:h-[400px] xl:w-full xl:h-[553px] ] object-cover rounded-3xl"
+          className="rounded-3xl"
         />
       </div>
 
@@ -36,13 +35,17 @@ const About = () => {
           I'm Nahla Galal
         </h2>
         <p className="leading-6 [ text-darkGrey dark:text-lightGrey ]">
-          Computer Science graduate passionate about Front-end. Highly-capable
-          leader, Leading committees at my faculty, Leading front-end at my
-          graduation project. Like to organize events, multitasking and
-          learning, Proficient in HTML, CSS.
+          Highly motivated front-end developer with +4 years of experience in
+          building responsive and user-friendly web interfaces. Proficient in
+          HTML, CSS, Javascript, Typescript, React and Vue.js. Possesses a keen
+          eye for design and a strong understanding of user experience
+          principles. Experienced in working with Agile methodologies and
+          collaborating with cross-functional teams. Eager to learn new
+          technologies and stay updated with the latest trends in web
+          development.
         </p>
         <div className="[ grid grid-cols-[32px_1fr] gap-2 items-center ] mt-10">
-          <ListItem text="01097429922" title="Phone" Icon={HiPhone} />
+          <ListItem text="01069899709" title="Phone" Icon={HiPhone} />
           <ListItem
             text="nahlaglal@gmail.com"
             title="Email"

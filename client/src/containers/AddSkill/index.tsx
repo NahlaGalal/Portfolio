@@ -39,7 +39,7 @@ const AddSkill = () => {
       >
         Add skill
       </h1>
-      <AddSkillFormUI errors={errors} register={register} watch={watch} />;
+      <AddSkillFormUI errors={errors} register={register} watch={watch} />
     </form>
   );
 };

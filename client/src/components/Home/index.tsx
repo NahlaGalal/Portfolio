@@ -7,7 +7,7 @@ import profile from "../../images/profile.jpg";
 
 const HomeSection = () => {
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center h-full">
       {/* Avatar */}
       <div className="[ border-4 border-darkGrey dark:border-lightGrey ] [ w-max ] rounded-full mb-4">
         <img
