@@ -14,6 +14,7 @@ const HomeSection = () => {
           src={profile}
           alt="Nahla personal avatar"
           className="[ h-32 w-32 sm:w-64 sm:h-64 ] object-cover rounded-full"
+          loading="lazy"
         />
       </div>
 

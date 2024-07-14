@@ -13,7 +13,7 @@ const Paging: React.FC<IPaging> = ({ pagesNum, page, setPage }) => {
             className={`
               border-0 rounded-full box-content cursor-pointer
               [ w-full h-full ]
-              [ py-0.5 px-0 ] 
+              [ py-0 px-0 ] 
               [ group-hover:bg-darkGreen dark:group-hover:bg-lightGreen ]
               [ group-hover:text-lightGrey dark:group-hover:text-darkGrey ] 
               ${
