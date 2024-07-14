@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   AiFillFacebook,
@@ -9,6 +9,7 @@ import {
 import emailjs from "emailjs-com";
 import { IFormTypes } from "./Types";
 import ContactFormUI from "./FormUI";
+import Loading from "../Loading";
 
 const Contact = () => {
   const {
@@ -16,10 +17,15 @@ const Contact = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm<IFormTypes>();
   const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [resText, setResText] = useState<string>("");
 
-  const onSubmitHandler = (data: IFormTypes) => {
+  const onSubmitHandler = () => {
+    setLoading(true);
+
     if (form.current)
       emailjs
         .sendForm(
@@ -28,8 +34,19 @@ const Contact = () => {
           form.current,
           process.env.REACT_APP_PUBLIC_KEY || ""
         )
-        .then((res) => console.log(res.text))
-        .catch((err) => console.log(err.text));
+        .then(() => {
+          setResText("Message has been sent successfully!");
+          reset();
+        })
+        .catch(() =>
+          setResText(
+            "There was an error sending the email, please try again later"
+          )
+        )
+        .finally(() => {
+          setLoading(false);
+          setTimeout(() => setResText(""), 5000);
+        });
   };
 
   return (
@@ -105,9 +122,16 @@ const Contact = () => {
           </li>
         </ul>
       </div>
-      <form onSubmit={handleSubmit(onSubmitHandler)} ref={form}>
-        <ContactFormUI register={register} watch={watch} errors={errors} />
-      </form>
+      <div className="relative">
+        {loading && <Loading />}
+
+        <form onSubmit={handleSubmit(onSubmitHandler)} ref={form}>
+          <ContactFormUI register={register} watch={watch} errors={errors} />
+        </form>
+        <p className="mt-1 text-center text-sm text-darkGreen dark:text-lightGreen">
+          {resText}
+        </p>
+      </div>
     </section>
   );
 };
